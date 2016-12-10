@@ -2,6 +2,10 @@
 \usetheme{metropolis}           % Use metropolis theme
 \usepackage[german]{babel}  
 \usepackage[utf8]{inputenc}	%dt Sonderzeichen wie ß
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usetikzlibrary{arrows,positioning}
 
 \renewcommand*{\figurename}{Abb.}
 
@@ -19,23 +23,193 @@
 		\tableofcontents[hideallsubsections]
 	\end{frame}
 	
-	\section{Einführung}
-	
-	%------------
-	
-	\begin{frame}{Motivation}
-		
-	\end{frame}
-	
-	%------------
-	
-	\begin{frame}{Wiederholung: Was ist Varianz?}
-		
-	\end{frame}
-	
-	%------------
-	
 	\section{Henri}
+	
+	\begin{frame}{Einführung}
+		% - A title should summarize the slide in an understandable fashion
+		%   for anyone how does not follow everything on the slide itself.
+		
+		\begin{block}{Definition}
+			Verfahren, welches die Wirkung einer (oder mehrerer) UV auf eine (oder mehrerer) AV untersucht.
+		\end{block}
+		\begin{itemize}
+			\item
+			testet Unterschiede zw. Mittelwerten auf Signifikanz
+			\item
+			Einsatz bei mehr als 2 Stichproben
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Grundbegriffe }
+		\begin{itemize}
+			\item Zielvariable: abhängige Variable(AV) 
+			\item Faktor: unabhängige Variable(UV) 
+			\item Faktorstufen: Ausprägungen/Kategorien eines Faktors 
+			\item Effekt: Wirkung eines Faktors auf die AV
+			\item Interaktionseffekt: kombinierte Wirkung zweier Faktoren auf die AV
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Unterteilung}
+		Abgrenzung anhand von Anzahl abhängige Variablen und Faktoren
+		\begin{table}[]
+			\centering
+			\begin{tabular}{|l|l|l|}
+				\hline
+				Zahl der AVn & Zahl der UVn  & Bezeichnung\\ \hline
+				\begin{tabular}[c]{@{}l@{}}1\\ 1\\ 1\\ \hfill \end{tabular} & \begin{tabular}[c]{@{}l@{}}1\\ 2\\ 3\\ usw.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Einfaktorielle VA\\ Zweifaktorielle VA\\ Dreifaktorielle VA\\ \hfill \end{tabular} \\ \hline
+				$\geq$ 2   & $\geq$ 1 & Multivariante VA  \\ \hline
+				$\geq$ 1   & $\geq$ 2 & Kovrianzanalyse \\ \hline
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	\begin{frame}{Vorraussetzungen}
+		\begin{itemize}
+			\item Fehlerkomponenten sind normalverteilt
+			\item Fehlervarianzen homogen in den Faktorstufen
+			\item Messwerte bzw. Faktorstufen sind unabhängig voneinander
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Prinzip der Varianzanalyse}
+		Die gesamte Varianz der AV wird aufgeteilt in:
+		\begin{itemize}
+			\item Varianz \emph{zwischen} Gruppen:\\
+			Abweichung der Gruppenmittelwerte vom Gesamtmittelwert\\
+			= systematische Varianz
+			\item Varianz \emph{innerhalb} von Gruppen:\\
+			Abweichung einzelner Messwerte vom Gruppenmittelwert\\
+			= unsystematische Varianz, Fehlervarianz
+		\end{itemize}
+		$\Rightarrow$ anschließend Vergleich der Varianzschätzungen
+	\end{frame}
+	
+	\begin{frame}{Prinzip der Varianzanalyse}
+		\includegraphics[width=\linewidth]{Bilder/stress}
+	\end{frame}
+	
+	\begin{frame}{Mathematisches Modell}
+		\textbf{Allgemeines Modell der einfaktoriellen Varianzanalyse} 
+		\begin{center}
+			\begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=0.8}]
+			\tikzstyle{myedgestyle} = [-triangle 60]
+			
+			
+			\node at (-5,1.5) {$y_{i} = \mu + \alpha_i + \varepsilon_{i}$};
+			\node (A1) at (-7.5,3) {Zielvariable};
+			\node (A2) at (-6.4,1.8) {};
+			
+			\node at (-5.4,1.2)(B2) {};
+			\node [align=left] (B1) at (-5.8,-0.2) {Mittelwert der\\Gesamtstichprobe};
+			\node at (-4.6,1.8)(C2) {};
+			\node [align=left] (C1) at (-2.8,3) {Effekt der Faktorstufe $i$\\(systematische Varianz)};
+			\node at (-3.6,1.4) (D2){};
+			\node [align=left] (D1) at (-0.4,1.4) {Verbleibender Fehler\\(Fehlervarianz)};
+			
+			
+			\node at (-9.4,-2.2) {$i = 1,\dots ,k, j =1,\dots,n_i$};
+			\node at (-9.6,-2)(E2) {};
+			\node [align=left] (E1) at (-10,-0.8) {Anzahl der Faktorstufen des\\betrachteten Faktors};
+			\node (F2) at (-7.4,-2.2) {};
+			\node [align=left] (F1) at (-4,-2.4) {Stichprobenumfänge f\"ur\\die einzelnen Faktorenstufen};
+	
+			\draw [myedgestyle] (A1) -- (A2);
+			\draw [myedgestyle] (B1) -- (B2);
+			\draw [myedgestyle] (C1) -- (C2);
+			\draw [myedgestyle] (D1) -- (D2);
+			\draw [myedgestyle] (E1) -- (E2);
+			\draw [myedgestyle] (F1) -- (F2);
+			
+			
+			\end{tikzpicture}
+		\end{center}
+	\end{frame}
+	
+		\begin{frame}{Mathematisches Modell}
+			\textbf{Allgemeines Modell der zweifaktoriellen Varianzanalyse} 
+			\begin{center}
+				\begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=0.8}]
+				\tikzstyle{myedgestyle} = [-triangle 60]
+				
+				
+				\node at (-5,1.5) {$y_{ij} = \mu + \alpha_i  + \beta_j + (\alpha\beta)_{ij}+ \varepsilon_{ij}$};
+				\node (A1) at (-9.8,2.2) {Zielvariable};
+				\node (A2) at (-7.6,1.6) {};
+				
+				\node (B2) at (-6.5,1.2) {};
+				\node [align=left] (B1) at (-7.2,-0.5) {Mittelwert der\\Gesamtstichprobe};
+				\node (C2) at (-5.8,1.8) {};
+				\node [align=left] (C1) at (-6,3.6) {Effekt der Faktorstufe $i$\\(systematische Varianz A)};
+				\node (D2) at (-2.4,1.4) {};
+				\node [align=left] (D1) at (1,1.4) {Verbleibender Fehler\\(Fehlervarianz)};
+				
+				\node (G2) at (-4,1.4) {};
+				\node[align=left] (G1) at (-2.8,-0.6) {Interaktionseffekt zw. der Stufe $i$\\
+					UVA und der Stufe $j$ UVB\\(systematische Varianz AxB)};
+				
+				\draw [myedgestyle] (A1) -- (A2);
+				\draw [myedgestyle] (B1) -- (B2);
+				\draw [myedgestyle] (C1) -- (C2);
+				\draw [myedgestyle] (D1) -- (D2);
+				\draw [myedgestyle] (G1) -- (G2);
+				
+				\end{tikzpicture}
+			\end{center}
+		\end{frame}
+		
+		\begin{frame}{Hypothesen}
+			\begin{block}{einfaktoriell}
+				\begin{itemize}\itemsep=2ex
+					\item Nullhypothese:\\
+					Alle Mittelwerte sind gleich oder alle Effekte $\alpha_i$ sind Null.\\
+					Formal: $H_0: \mu_1 = \mu_2 = \dots = \mu_k$ oder $\sum\alpha_i^2=0$
+					\item Alternativhypothese:\\
+					Nicht alle Mittelwerte sind gleich oder mindestens ein Effekt $\alpha_i$ ist ungleich Null.\\
+					Formal: $H_1: \sum(\mu_k-\mu)^2 > 0$ oder $\sum\alpha_i^2>0$
+				\end{itemize}
+			\end{block}
+		\end{frame}
+		
+		\begin{frame}{Hypothesen}
+			\begin{block}{zweifaktoriell}
+				Für jeden Faktor wird eine Nullhypothese überprüft(über alle Bedingungen des anderen Faktors):
+				\begin{itemize}\itemsep=2ex
+					\item Faktor A:\\
+					Alle Zeilenmittelwerte sind gleich oder alle Effekte $\alpha_i$ sind Null.\\
+					Formal: $H_0: \mu_{1\cdot} = \mu_{2\cdot} = \dots = \mu_{k\cdot}$ oder $\sum\alpha_i^2=0$
+					\item Faktor B:\\
+					Alle Spaltenmittelwerte sind gleich oder alle Effekte $\beta_j$ sind Null.\\
+					Formal: $H_0: \mu_{\cdot1} = \mu_{\cdot2} = \dots = \mu_{\cdot n}$ oder $\sum\beta_j^2=0$
+				\end{itemize}
+			\end{block}
+		\end{frame}
+		\begin{frame}{Zweifaktorielle VA}
+			
+			\begin{table}[]
+				\centering
+				\resizebox{\textwidth}{!} {
+				\begin{tabular}{|cc|c|c|c|c|c|}
+					\hline
+					\multicolumn{2}{|c|}{\multirow{2}{*}{}}        & \multicolumn{4}{c|}{UV B}                                                                                        & Zeilenmittel           \\
+					\multicolumn{2}{|c|}{}                         & $B_1$                       & $B_2$                       & \dots                  & $A_n$                       & HE A                   \\ \hline
+					\multirow{8}{*}{UV A} & \multirow{2}{*}{$A_1$} & \multirow{2}{*}{$\mu_{11}$} & \multirow{2}{*}{$\mu_{12}$} & \multirow{2}{*}{\dots} & \multirow{2}{*}{$\mu_{1n}$} & $\mu_{1\cdot}$         \\
+					&                        &                             &                             &                        &                             & $= \mu + \alpha_1$     \\ \cline{2-7} 
+					& \multirow{2}{*}{$A_2$} & \multirow{2}{*}{$\mu_{21}$} & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots} & \multirow{2}{*}{\dots}      & $\mu_{2\cdot}$         \\
+					&                        &                             &                             &                        &                             & $= \mu + \alpha_2$     \\ \cline{2-7} 
+					& \multirow{2}{*}{\dots} & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots} & \multirow{2}{*}{\dots}      & $\mu_{i\cdot}$         \\
+					&                        &                             &                             &                        &                             & $= \mu + \alpha_i$     \\ \cline{2-7} 
+					& \multirow{2}{*}{$A_k$} & \multirow{2}{*}{$\mu_{k1}$} & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots} & \multirow{2}{*}{$\mu_{kn}$} & $\mu_{k\cdot}$         \\
+					&                        &                             &                             &                        &                             & $= \mu + \alpha_k$     \\ \hline
+					Spalten-              & \multirow{2}{*}{HE B}  & $\mu_{\cdot1}$              & $\mu_{\cdot2}$              & $\mu_{\cdot j}$        & $\mu_{\cdot n}$             & \multirow{2}{*}{$\mu$} \\
+					mittel                &                        & $= \mu + \beta_1$           & $= \mu + \beta_2$           & $= \mu + \beta_i$      & $= \mu + \beta_n$           &                        \\ \hline
+				\end{tabular}
+			}
+			\end{table}
+		
+		\end{frame}
+		
+	
 	
 	\section{Robert}
 	
