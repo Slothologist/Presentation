@@ -1,0 +1,114 @@
+\documentclass[
+	11pt,
+	DIV=15,
+	parskip=full,    % spacing value / method for paragraphs
+]{scrartcl}
+
+\usepackage[german]{babel}  
+\usepackage[utf8]{inputenc}	%dt Sonderzeichen wie ß
+\usepackage{enumerate}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{todonotes}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{color}
+
+%\titlespacing{\subsection}{12pt}{-0.5em}{-1.5em}
+%\RedeclareSectionCommand[beforeskip=-.75\baselineskip,afterskip=.5\baselineskip]{subsection}
+
+
+\begin{document}
+	\begin{center}
+		\begin{onehalfspace}
+			\Large{Schlangenöl\\Viren und wie man sie nicht vermeidet}\\
+			\large{Digitale Kommunikation und Internetdienste II}\\
+		\end{onehalfspace}
+		\large{Robert Feldhans (rfeldhans@techfak.uni-bielefeld.de)}\\
+		\large{Dominik Sixt (dsixt@techfak.uni-bielefeld.de)}
+		\end{center}
+	\hrulefill
+	
+	\subsection*{Schlangenöl}
+	\begin{itemize}
+		\itemsep-1pt
+		\item Beginn: Heilmittel für Gebrechen aller Art, von Wunderheilern im Wilden Westen eingesetzt
+		\item Heute: versprochenes Wundermittel, welches oft dem technischen Bereich entstammt (z.B. Kryptografie und Antiviren-Software)
+	\end{itemize}
+	
+	\subsection*{Malware}
+	Oberbegriff für Software, welche schädliche Funktionen ausführen
+	
+	\begin{itemize}
+		\itemsep-1pt
+		\item Viren: Schadprogramm, welches sich verbreitet, in dem es sich in andere Software einschleust. Durch das Kopieren dieser wird der Virus passiv verbreitet (und dabei oft nur lokal)
+		\item Würmer: Schadprogramm, welches sich aktiv ausbreitet, in dem es Sicherheitsprobleme ausnutzt. Für Nutzer kaum unterschiedlich zu Viren
+		\item Trojanische Pferde: Schadprogramm, welches sich als nützliche Anwendung tarnt und ohne Wisse des Anwenders (auch) schädliche Funktionen ausführt
+		\item Ransomware: Trojaner, welcher Zugriffe auf persönliche Daten oder derer des Betriebssystems verhindert. Für eine Entschlüsselung dieser wird schließlich Lösegeld gefordert
+		\item ...
+		\item nicht: fehlerhafte Software	
+	\end{itemize}
+	
+	\subsection*{Hauptverteilwege von Malware}
+	\begin{itemize}
+		\itemsep-1pt
+		\item E-Mail-Dateianhänge
+		\item Drive-by-Downloads
+		\item Datenträger
+		\item Netzwerke
+	\end{itemize}
+	
+	$\Rightarrow$ \textcolor{red}{Vermeintliche Lösung:} Antiviren-Programm installieren!
+	
+	\subsection*{Verbreitung von AV-Programmen}
+	\begin{itemize}
+		\itemsep-1pt
+		%\item{AVG Antivirus App 4.6 Millionen Downloads (Android)}
+		%\item{360 Security 12.5 Millionen Downloads (Android)}
+		\item{AVG Antivirus Free 22.3M}
+		\item{avast Free Antivirus 19.4M}
+		\item{Ad-Aware Free Antivirus 9.2M}
+	\end{itemize}
+	jeweils in Millionen Downloads bei Chip (Windows)
+	
+	\subsection*{Hauptmaßnahmen der AV-Programme}
+	\begin{itemize}
+		\itemsep-1pt
+		\item Virtualisierung
+		\item Firewall
+		\item AV-Browser
+	\end{itemize}
+	
+	$\rightarrow$ \textcolor{red}{Diverse Fehlschläge} in der Implementierung von AV-Programmen, welche die Sicherheitslücken (teilweise) hinzufügen. Siehe hierfür die Präsentation
+	
+	\subsection*{Wirksame Maßnahmen gegen Viren}
+	\begin{itemize}
+		\itemsep-1pt
+		\item Präventives Verhalten erlernen
+		\item Software mit großem Sicherheitsrisiko meiden
+		\item Fremdcode von Webseiten minimieren
+		\item Richtige Wahl/Konfiguration des Betriebssystems
+	\end{itemize}
+	
+	
+	
+	
+	
+	\titlespacing{\subsection}{12pt}{-0.5em}{-0.5em}
+	
+	\subsection*{Quellen}
+	\begin{itemize}
+		\itemsep-7pt
+		\item blog.fefe.de
+		\item itwissen.info/definition/lexikon/ (diverse Definitionen)
+		\item de.wikipedia.org/wiki/Schadprogramm
+		\item https://de.wikipedia.org/wiki/Antivirenprogramm
+		\item www.chip.de (diverse AV-Downloadseiten) 
+		\item https://de.wikipedia.org/wiki/Firewall
+	\end{itemize}
+	
+
+	
+\end{document}
