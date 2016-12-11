@@ -23,7 +23,7 @@
 		\tableofcontents[hideallsubsections]
 	\end{frame}
 	
-	\section{Henri}
+	\section{Einführung}
 	
 	\begin{frame}{Einführung}
 		% - A title should summarize the slide in an understandable fashion
@@ -33,10 +33,9 @@
 			Verfahren, welches die Wirkung einer (oder mehrerer) UV auf eine (oder mehrerer) AV untersucht.
 		\end{block}
 		\begin{itemize}
-			\item
-			testet Unterschiede zw. Mittelwerten auf Signifikanz
-			\item
-			Einsatz bei mehr als 2 Stichproben
+			\item testet Unterschiede zw. Mittelwerten auf Signifikanz
+			\item Einsatz bei mehr als 2 Stichproben
+			\item Häufig auch als Globaltest bezeichnet
 		\end{itemize}
 	\end{frame}
 	
@@ -59,7 +58,6 @@
 				Zahl der AVn & Zahl der UVn  & Bezeichnung\\ \hline
 				\begin{tabular}[c]{@{}l@{}}1\\ 1\\ 1\\ \hfill \end{tabular} & \begin{tabular}[c]{@{}l@{}}1\\ 2\\ 3\\ usw.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Einfaktorielle VA\\ Zweifaktorielle VA\\ Dreifaktorielle VA\\ \hfill \end{tabular} \\ \hline
 				$\geq$ 2   & $\geq$ 1 & Multivariante VA  \\ \hline
-				$\geq$ 1   & $\geq$ 2 & Kovrianzanalyse \\ \hline
 			\end{tabular}
 		\end{table}
 	\end{frame}
@@ -72,7 +70,7 @@
 		\end{itemize}
 	\end{frame}
 	
-	\begin{frame}{Prinzip der Varianzanalyse}
+	\begin{frame}[label=prinzipVA]{Prinzip der Varianzanalyse}
 		Die gesamte Varianz der AV wird aufgeteilt in:
 		\begin{itemize}
 			\item Varianz \emph{zwischen} Gruppen:\\
@@ -85,7 +83,7 @@
 		$\Rightarrow$ anschließend Vergleich der Varianzschätzungen
 	\end{frame}
 	
-	\begin{frame}{Beispiel}
+	\begin{frame}[label=beispiel1]{Beispiel}
 		\includegraphics[width=\linewidth]{Bilder/stress}
 	\end{frame}
 	
@@ -96,7 +94,7 @@
 			\tikzstyle{myedgestyle} = [-triangle 60]
 			
 			
-			\node at (-5,1.5) {$y_{i} = \mu + \alpha_i + \varepsilon_{i}$};
+			\node at (-5,1.5) {$y_{k} = \mu + \alpha_k + \varepsilon_{k}$};
 			\node (A1) at (-7.5,3) {Zielvariable};
 			\node (A2) at (-6.4,1.8) {};
 			
@@ -108,7 +106,7 @@
 			\node [align=left] (D1) at (-0.4,1.4) {Verbleibender Fehler\\(Fehlervarianz)};
 			
 			
-			\node at (-9.4,-2.2) {$i = 1,\dots ,k, j =1,\dots,n_i$};
+			\node at (-9.4,-2.2) {$k = 1,\dots ,K, n =1,\dots,N_k$};
 			\node at (-9.6,-2)(E2) {};
 			\node [align=left] (E1) at (-10,-0.8) {Anzahl der Faktorstufen des\\betrachteten Faktors};
 			\node (F2) at (-7.4,-2.2) {};
@@ -133,7 +131,7 @@
 				\tikzstyle{myedgestyle} = [-triangle 60]
 				
 				
-				\node at (-5,1.5) {$y_{ij} = \mu + \alpha_i  + \beta_j + (\alpha\beta)_{ij}+ \varepsilon_{ij}$};
+				\node at (-5,1.5) {$y_{jk} = \mu + \alpha_j  + \beta_k + (\alpha\beta)_{jk}+ \varepsilon_{jk}$};
 				\node (A1) at (-9.8,2.2) {Zielvariable};
 				\node (A2) at (-7.6,1.6) {};
 				
@@ -145,8 +143,8 @@
 				\node [align=left] (D1) at (1,1.4) {Verbleibender Fehler\\(Fehlervarianz)};
 				
 				\node (G2) at (-4,1.4) {};
-				\node[align=left] (G1) at (-2.8,-0.6) {Interaktionseffekt zw. der Stufe $i$\\
-					UVA und der Stufe $j$ UVB\\(systematische Varianz AxB)};
+				\node[align=left] (G1) at (-2.8,-0.6) {Interaktionseffekt zw. der Stufe $j$\\
+					UVA und der Stufe $k$ UVB\\(systematische Varianz AxB)};
 				
 				\draw [myedgestyle] (A1) -- (A2);
 				\draw [myedgestyle] (B1) -- (B2);
@@ -162,29 +160,32 @@
 			\begin{block}{einfaktoriell}
 				\begin{itemize}\itemsep=2ex
 					\item Nullhypothese:\\
-					Alle Mittelwerte sind gleich oder alle Effekte $\alpha_i$ sind Null.\\
-					Formal: $H_0: \mu_1 = \mu_2 = \dots = \mu_k$ oder $\sum\alpha_i^2=0$
+					Alle Mittelwerte sind gleich oder alle Effekte $\alpha_k$ sind 0.\\
+					Formal: $H_0: \mu_1 = \mu_2 = \dots = \mu_k$ oder $\sum\alpha_k^2=0$
 					\item Alternativhypothese:\\
 					Nicht alle Mittelwerte sind gleich oder mindestens ein Effekt $\alpha_i$ ist ungleich Null.\\
-					Formal: $H_1: \sum(\mu_k-\mu)^2 > 0$ oder $\sum\alpha_i^2>0$
+					Formal: $H_1: \sum(\mu_k-\mu)^2 > 0$ oder $\sum\alpha_k^2>0$
 				\end{itemize}
 			\end{block}
 		\end{frame}
 		
 		\begin{frame}{Hypothesen}
 			\begin{block}{zweifaktoriell}
-				Für jeden Faktor wird eine Nullhypothese überprüft(über alle Bedingungen des anderen Faktors):
-				\begin{itemize}\itemsep=2ex
+				Für jeden Faktor wird eine Nullhypothese überprüft
+				\begin{itemize}\itemsep=1ex
 					\item Faktor A:\\
-					Alle Zeilenmittelwerte sind gleich oder alle Effekte $\alpha_i$ sind Null.\\
-					Formal: $H_0: \mu_{1\cdot} = \mu_{2\cdot} = \dots = \mu_{k\cdot}$ oder $\sum\alpha_i^2=0$
+					Alle Zeilenmittelwerte sind gleich oder alle Effekte $\alpha_j$ sind 0.\\
+					Formal: $H_0: \mu_{1\cdot} = \mu_{2\cdot} = \dots = \mu_{J\cdot}$ oder $\sum\alpha_j^2=0$
 					\item Faktor B:\\
-					Alle Spaltenmittelwerte sind gleich oder alle Effekte $\beta_j$ sind Null.\\
-					Formal: $H_0: \mu_{\cdot1} = \mu_{\cdot2} = \dots = \mu_{\cdot n}$ oder $\sum\beta_j^2=0$
+					Alle Spaltenmittelwerte sind gleich oder alle Effekte $\beta_k$ sind 0.\\
+					Formal: $H_0: \mu_{\cdot1} = \mu_{\cdot2} = \dots = \mu_{\cdot K}$ oder $\sum\beta_k^2=0$
+					\item Interaktion AB:\\
+					Die Wirkung der einzelnen UVn auf die AV ist voneinander abhängig.\\
+					Formal: $H_0: \bar{y}_{jk} = \mu_{\cdot k} + \mu_{j\cdot} - \mu + \varepsilon$
 				\end{itemize}
 			\end{block}
 		\end{frame}
-		\begin{frame}{Zweifaktorielle VA}
+		\begin{frame}{Zweifaktorielle Varianzanalyse}
 			
 			\begin{table}[]
 				\centering
@@ -192,23 +193,88 @@
 				\begin{tabular}{|cc|c|c|c|c|c|}
 					\hline
 					\multicolumn{2}{|c|}{\multirow{2}{*}{}}        & \multicolumn{4}{c|}{UV B}                                                                                        & Zeilenmittel           \\
-					\multicolumn{2}{|c|}{}                         & $B_1$                       & $B_2$                       & \dots                  & $A_n$                       & HE A                   \\ \hline
-					\multirow{8}{*}{UV A} & \multirow{2}{*}{$A_1$} & \multirow{2}{*}{$\mu_{11}$} & \multirow{2}{*}{$\mu_{12}$} & \multirow{2}{*}{\dots} & \multirow{2}{*}{$\mu_{1n}$} & $\mu_{1\cdot}$         \\
+					\multicolumn{2}{|c|}{}                         & $B_1$                       & $B_2$                       & \dots                  & $B_K$                       & HE A                   \\ \hline
+					\multirow{8}{*}{UV A} & \multirow{2}{*}{$A_1$} & \multirow{2}{*}{$\mu_{11}$} & \multirow{2}{*}{$\mu_{12}$} & \multirow{2}{*}{\dots} & \multirow{2}{*}{$\mu_{1K}$} & $\mu_{1\cdot}$         \\
 					&                        &                             &                             &                        &                             & $= \mu + \alpha_1$     \\ \cline{2-7} 
 					& \multirow{2}{*}{$A_2$} & \multirow{2}{*}{$\mu_{21}$} & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots} & \multirow{2}{*}{\dots}      & $\mu_{2\cdot}$         \\
 					&                        &                             &                             &                        &                             & $= \mu + \alpha_2$     \\ \cline{2-7} 
-					& \multirow{2}{*}{\dots} & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots} & \multirow{2}{*}{\dots}      & $\mu_{i\cdot}$         \\
-					&                        &                             &                             &                        &                             & $= \mu + \alpha_i$     \\ \cline{2-7} 
-					& \multirow{2}{*}{$A_k$} & \multirow{2}{*}{$\mu_{k1}$} & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots} & \multirow{2}{*}{$\mu_{kn}$} & $\mu_{k\cdot}$         \\
-					&                        &                             &                             &                        &                             & $= \mu + \alpha_k$     \\ \hline
-					Spalten-              & \multirow{2}{*}{HE B}  & $\mu_{\cdot1}$              & $\mu_{\cdot2}$              & $\mu_{\cdot j}$        & $\mu_{\cdot n}$             & \multirow{2}{*}{$\mu$} \\
-					mittel                &                        & $= \mu + \beta_1$           & $= \mu + \beta_2$           & $= \mu + \beta_i$      & $= \mu + \beta_n$           &                        \\ \hline
+					& \multirow{2}{*}{\dots} & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots} & \multirow{2}{*}{\dots}      & $\mu_{j\cdot}$         \\
+					&                        &                             &                             &                        &                             & $= \mu + \alpha_j$     \\ \cline{2-7} 
+					& \multirow{2}{*}{$A_J$} & \multirow{2}{*}{$\mu_{J1}$} & \multirow{2}{*}{\dots}      & \multirow{2}{*}{\dots} & \multirow{2}{*}{$\mu_{JK}$} & $\mu_{J\cdot}$         \\
+					&                        &                             &                             &                        &                             & $= \mu + \alpha_J$     \\ \hline
+					Spalten-              & \multirow{2}{*}{HE B}  & $\mu_{\cdot1}$              & $\mu_{\cdot2}$              & $\mu_{\cdot k}$        & $\mu_{\cdot K}$             & \multirow{2}{*}{$\mu$} \\
+					mittel                &                        & $= \mu + \beta_1$           & $= \mu + \beta_2$           & $= \mu + \beta_k$      & $= \mu + \beta_K$           &                        \\ \hline
 				\end{tabular}
 			}
 			\end{table}
 		
 		\end{frame}
+	\section{Prinzip der Varianzanalyse}
 		
+	\againframe{prinzipVA}
+	
+	\begin{frame}{Summe der Abweichungsquadrate}
+		Repräsentiert die Unterschiedlichkeit der Werte der AV.
+		Drei relevante Formen:
+		\begin{itemize} \itemsep=2ex
+			\item $SAQ_{Gesamt}$: Die Gesamtvariabilität.\\
+			Formal: $SAQ_{Gesamt}= \sum(y - \bar{y})^2$
+			\item $SAQ_{Effekt}$: auch $SAQ_{zwischen}$; Variabilität zwischen Bedingungen.\\
+			Formal: $SAQ_{Effekt} = n_k \sum_{k=1}^{K} (\bar{y}_k - \bar{y})^2$ 
+			\item $SAQ_{Fehler}$: auch $SAQ_{innerhalb}$; Variabilität innerhalb einer Bedingung.\\
+			Formal: $SAQ_{Fehler} = \sum (y - \bar{y}_k)^2$ 
+		\end{itemize}
+		\begin{center}
+			\textbf{Es gilt $\mathbf{SAQ_{Gesamt} = SAQ_{Effekt} + SAQ_{Fehler}}$}
+		\end{center}
+	\end{frame}
+	
+	\againframe{beispiel1}
+		
+	\begin{frame}{Freiheitsgrade (FG)}	
+		
+		Anzahl der frei variierbaren Werte oder auch \\
+		Anzahl der in die SAQ eingehenden Werte
+		\begin{itemize}
+			\item $SAQ_{Gesamt}$: $N-1$
+			\item $SAQ_{Effekt}$: $K-1$ \hspace{3em} K: Anzahl Faktorstufen
+			\item $SAQ_{Effekt}$: $K \cdot (n-1)$
+		\end{itemize}
+		\textbf{Es gilt $\mathbf{FG_{Gesamt} = FG_{Effekt} + FG_{Fehler}}$}
+
+	\end{frame}
+	
+	\begin{frame}{Mittlere Quadratsumme (MQ)}
+		\begin{itemize}\itemsep=2ex
+			\item Die mittlere Quadratsumme entspricht der Varianz
+			\item $MQ_{Fehler}$: Schätzung der Populationsvarianz
+			\item $MQ_{Effekt}$: Schätzung der Populationsvarianz wenn $H_0$ gilt
+			\item Mittlere Quadratsummen sind \textbf{nicht} additiv
+		\end{itemize}
+		\begin{center}
+			$MQ = \frac{SAQ}{FG}$
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Bedeutung der MQ}
+		\begin{itemize}\itemsep=2ex
+			\item $MQ_{Effekt} = MQ_{Fehler}$: $H_0$ ist gültig
+			\item $MQ_{Effekt} \gg MQ_{Fehler}$: $H_0$ ist ungültig, $MQ_{Effekt}$ enthält systematische Varianz
+		\end{itemize}
+		\begin{center}
+			\textbf{Aber:} Wann ist $MQ_{Effekt}$ überzufällig größer als $MQ_{Fehler}$?
+			\pause\\ \hfill\\ $\Rightarrow$ Prüfen mit F-Verteilung \vspace{2ex} \\
+			$F = \frac{MQ_{Effekt}}{MQ_{Fehler}}, FG=K-1,K(n-1)$
+		\end{center}
+		
+	\end{frame}
+	
+	\begin{frame}{F-Verteilung}
+		Wenn $F_{empirisch} > F_{kritisch} \Rightarrow $ Ablehnung von $H_0$
+		\includegraphics[trim=60 100 240 190,clip,angle=270,origin=c, width=\textwidth]{Bilder/F-verteilung}
+		\let\thefootnote\relax\footnote{{\fontsize{5}{5} \selectfont \vspace{-5ex}
+				Quelle: https://www.statistik.tu-dortmund.de/fileadmin/user\_upload/Lehrstuehle/Oekonometrie/Lehre/WiSo-Stat-1415/tabelleF.pdf}}
+	\end{frame}
 	
 	
 	\section{Robert}
