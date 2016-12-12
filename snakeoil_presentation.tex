@@ -291,7 +291,88 @@
 		
 	\end{frame}
 	
+	\begin{frame}{Varianzanalyseplan}
+		Einfaktorielle Varianzanalyse\\
+		\begin{table}[]
+			\centering
+			\resizebox{\textwidth}{!} {
+			\begin{tabular}{|c|r|r|r|r|r|r|r|}
+				\hline
+				\multirow{2}{*}{Quelle} & \multicolumn{1}{c|}{\multirow{2}{*}{SAQ}} & \multicolumn{1}{c|}{\multirow{2}{*}{FG}} & \multicolumn{1}{c|}{\multirow{2}{*}{MQ}} & \multicolumn{1}{c|}{\multirow{2}{*}{F-Wert}} & \multicolumn{1}{c|}{F-krit}        & \multicolumn{1}{c|}{\multirow{2}{*}{Bewertung}} & \multicolumn{1}{c|}{\multirow{2}{*}{$\eta^2$}} \\
+				& \multicolumn{1}{c|}{}                     & \multicolumn{1}{c|}{}                    & \multicolumn{1}{c|}{}                    & \multicolumn{1}{c|}{}                        & \multicolumn{1}{c|}{$\alpha=0.05$} & \multicolumn{1}{c|}{}                           & \multicolumn{1}{c|}{}                          \\ \hline
+				Effekt                  & 22,93                                     & 2                                        & 11,46                                    & 1,22                                         & 3,89                               & n.s.                                            & 0,17                                           \\ \hline
+				Fehler                  & 112,40                                    & 12                                       & 9,36                                     &                                              &                                    &                                                 &                                                \\ \hline
+				Gesamt                  & 135,33                                    & 14                                       &                                          &                                              &                                    &                                                 &                                                \\ \hline
+			\end{tabular}
+		}
+		\end{table}
+		
+	\end{frame}
+	
+	\begin{frame}{Varianzanalyseplan}
+		Zweifaktorielle Varianzanalyse\\
+		\begin{table}[]
+			\centering
+			\resizebox{\textwidth}{!} {
+			\begin{tabular}{|c|r|r|r|r|r|r|r|}
+				\hline
+				\multirow{2}{*}{Quelle} & \multicolumn{1}{c|}{\multirow{2}{*}{SAQ}} & \multicolumn{1}{c|}{\multirow{2}{*}{FG}} & \multicolumn{1}{c|}{\multirow{2}{*}{MQ}} & \multicolumn{1}{c|}{\multirow{2}{*}{F-Wert}} & \multicolumn{1}{c|}{F-krit}        & \multicolumn{1}{c|}{\multirow{2}{*}{Bewertung}} & \multicolumn{1}{c|}{\multirow{2}{*}{$\eta^2$}} \\
+				& \multicolumn{1}{c|}{}                     & \multicolumn{1}{c|}{}                    & \multicolumn{1}{c|}{}                    & \multicolumn{1}{c|}{}                        & \multicolumn{1}{c|}{$\alpha=0.05$} & \multicolumn{1}{c|}{}                           & \multicolumn{1}{c|}{}                          \\ \hline
+				Haupteffekt A           & 16,054                                    & 1                                        & 16,054                                   & 2,188                                        & 4,0                                & n.s.                                            & 0,029                                          \\ \hline
+				Haupteffekt B           & 34,030                                    & 2                                        & 17,015                                   & 2,319                                        & 3,15                               & n.s.                                            & 0,062                                          \\ \hline
+				Interaktion AxB         & 15,528                                    & 2                                        & 7,764                                    & 1,058                                        & 3,15                               & n.s.                                            & 0,028                                          \\ \hline
+				Primär                  & 65,612                                    & 5                                        & 13,122                                   & 1,789                                        & 2,37                               & n.s.                                            & 0,119                                          \\ \hline
+				Fehler                  & 484,170                                   & 66                                       & 7,336                                    &                                              &                                    &                                                 &                                                \\ \hline
+				Gesamt                  & 549,782                                   & 71                                       &                                          &                                              &                                    &                                                 &                                                \\ \hline
+			\end{tabular}
+		}
+		\end{table}
+	\end{frame}
+	
 	\section{Rechnung an Tafel}
+	
+	\section{Messwiederholungen}
+	
+	\begin{frame}{Allgemein}
+		\begin{itemize}
+			\item Ziel: Höhere Präzision
+			\item Fehlervarianz unterteilt in interindividuelle Varianz und Restvarianz
+			\item "'Normalisierung der Ausgangslage"'
+		\end{itemize}
+		\begin{tikzpicture}
+		\draw (-0.5,0) rectangle (9.5,1.5) node[pos=.5] {Gesamt-SAQ};
+		\draw  (-0.5,0) rectangle (4.5,-1.5)  node[pos=.5] {$SAQ_{Effekt}$}; 
+		\draw  (4.5,0) rectangle (9.5,-1.5) node[pos=.5] {$SAQ_{Fehler}$};
+		\draw[fill=black!25]  (4.5,-1.5) rectangle (7,-3) node[pos=.5][align=center] {$SAQ_{Block}$\\ \footnotesize Personen};
+		\draw  (7,-1.5) rectangle (9.5,-3) node[pos=.5][align=center] {$SAQ_{Rest}$\\ \footnotesize Fehler};
+		\end{tikzpicture}		
+	\end{frame}
+	
+	\begin{frame}{Beispiel}
+		Beispiel: Recallexperiment: Verschiedene Wortarten
+		\begin{table}[]
+			\centering
+			\begin{tabular}{|l|l|l|l|}
+				\hline
+				\multirow{2}{*}{Vp} & \multicolumn{3}{l|}{Stufe der UV} \\
+				& Substantive  & Verben & Adjektive \\ \hline
+				1                   & 5            & 6      & 3         \\ \hline
+				2                   & 9            & 10     & 4         \\ \hline
+				3                   & 1            & 0      & 0         \\ \hline
+				4                   & 4            & 2      & 2         \\ \hline
+				5                   & 3            & 2      & 0         \\ \hline
+			\end{tabular}
+		\end{table}
+		$\Rightarrow$ Unterschiede zwischen Probanden (z.B. Vp 2 und Vp 3) schlägt sich auf $SAQ_{Fehler}$ nieder.
+	\end{frame}
+	
+	\begin{frame}{Berechnung}
+		\begin{itemize}
+			\item $SAQ_{Rest}$ bleibt unberücksichtigt
+			\item $F = \frac{MQ_{Effekt}}{MQ_{Rest}}$
+		\end{itemize}
+		\alert{TODO: Genauer; eindimensional, zweidimensional, VA-Tafel,... }
+	\end{frame}
 	
 	\section{Interaktion}
 	
