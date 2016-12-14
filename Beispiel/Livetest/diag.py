@@ -31,10 +31,11 @@ if achsenwechsel:
 		zu_plotten2.append(sum(each)/len(each))
 
 	pp.plot(zu_plotten1, 'r')
-	pp.plot(zu_plotten1, 'r-')
+	pp.plot(zu_plotten1, 'ro')
 	pp.plot(zu_plotten2, 'b')
 	pp.plot(zu_plotten2, 'bo')
-	pp.xlabel('Sustantiv     Verb     Adjektiv')
+	pp.xlabel('Sustantiv          Verb          Adjektiv')
+	pp.axis([0,2,0,10])
 
 else:
 	zu_plotten3 = []
@@ -45,12 +46,14 @@ else:
 	zu_plotten3.append(sum(data[2])/len(data[2]))
 	zu_plotten3.append(sum(data[5])/len(data[5]))
 	pp.plot(zu_plotten1, 'r')
-	pp.plot(zu_plotten1, 'r-')
+	pp.plot(zu_plotten1, 'ro')
 	pp.plot(zu_plotten2, 'b')
 	pp.plot(zu_plotten2, 'bo')
 	pp.plot(zu_plotten3, 'g')
-	pp.plot(zu_plotten3, 'g^')
-	pp.xlabel('Durchgang 1     Durchgang 2')
+	pp.plot(zu_plotten3, 'go')
+	pp.axis([0,1,0,10])
+	pp.xlabel('Durchgang 1               Durchgang 2')
+pp.gca().axes.get_xaxis().set_ticklabels([])
 
 pp.ylabel('# richtige Worte')
 pp.grid(True)
