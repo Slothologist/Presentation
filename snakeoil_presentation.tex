@@ -5,9 +5,13 @@
 \usepackage{tikz}
 \usepackage{amssymb}
 \usepackage{multirow}
+\usepackage{pgfpages}
+
+%\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
 \usetikzlibrary{arrows,positioning}
 
 \renewcommand*{\figurename}{Abb.}
+
 
 
 
@@ -37,7 +41,9 @@
 			\item Einsatz bei mehr als 2 Stichproben
 			\item Häufig auch als Globaltest bezeichnet
 		\end{itemize}
+		
 	\end{frame}
+	
 	
 	\begin{frame}{Grundbegriffe }
 		\begin{itemize}
@@ -280,20 +286,47 @@
 		\begin{center}
 			\textbf{Was ist dieses $F$ überhaupt?}
 		\end{center}
-		\pause
 		\textbf{allgemeine Mathematiker:} \emph{$F$ ist der Quotient zweier Chi-Quadrat-Verteilter Zufallsvariablen normiert um ihre Freiheitsgrade.} \\ \vspace{0.7ex}
 		\pause
+		
 		\textbf{Statistiker:} \emph{$F$ ist das Verhältnis der Varianzen zweier Zufallsvariablen.}\\
 		\vspace{0.7ex} \pause
-		\textbf{Freie Interpretation:} \emph{$F$ ist das Verhältnis zweier Abweichungen zur Normalverteilung, welche um die Normalverteilung normiert sind.} \\ \vspace{0.7ex} \pause
+		\textbf{Freie Interpretation:} \emph{$F$ ist das Verhältnis zweier Stichprobenvarianzen dividiert durch ihre erwartete Varianz} \\ \vspace{0.7ex} \pause
 		\begin{center}
 			\textbf{Wer hat Recht? }
-			\\ \vspace{0.7ex} \pause
+			\\ \vspace{0.7ex} \pause \note<.>{\alert{{\Large \textbf{Häää?!?!}} }}
 			\alert{{\Large \textbf{Häää?!?!}} }
 		\end{center}
 	\end{frame}
 	
+	\begin{frame}<1-4>{F-Verteilung}
+		\begin{center}
+			\textbf{Was ist dieses $F$ überhaupt?}
+		
+		\pause[]$F=\frac{\chi^2_m}{\chi^2_n}$\pause[3] $=\frac{MQ_{Effekt}}{MQ_{Fehler}}$\pause[4] $=\frac{\frac{s_x^2}{\sigma_x^2}}{\frac{s_y^2}{\sigma_y^2}}$
+		\end{center}
+		\pause[2]~\\ \vspace{1.2ex}
+		\textbf{allgemeine Mathematiker:} \emph{$F_{m,n}=\frac{\chi^2_m}{\chi^2_n}$}   
+		 \pause[3] ~\\ \vspace{1.2ex}
+		\textbf{Statistiker:} $F = \frac{MQ_{Effekt}}{MQ_{Fehler}}, FG=K-1,K(n-1)$ \pause[4] ~\\  \vspace{1.2ex} 
+		\textbf{Freie Interpretation:} $F = \frac{\frac{s_x^2}{\sigma_x^2}}{\frac{s_y^2}{\sigma_y^2}}$ \pause[5]  $=\frac{\chi^2_m}{\chi^2_n}$ ~\\
+	\end{frame}
 	
+	\begin{frame}{Chi-Quadrat-Verteilung}
+		\begin{block}{Definition}
+			Beschreibt die Verteilung der Summen von $n$ stochastisch unabhängigen quadrierten standardnormalverteilten Zufallsvariablen. \\ \vspace{2 ex}
+			\textbf{Formal:} $\chi_n^2 \sim Z_1^2+ \dots + Z_n^2 $ mit $Z_k \sim \mathcal{N}(0,1)$ für $k=1, \dots , n$
+			\note{$\sim$: "'ist verteilt wie"' \\Keine negativen Werte da quadrierte Summe}
+		\end{block}
+			\textbf{Normalverteilung zu Std.-Normalverteilung:} $Z = \frac{X-\mu}{\sigma}$ 
+	\end{frame}
+	
+	\begin{frame}{Chi-Quadrat-Verteilung}
+		Wir haben Stichprobe $X\sim \mathcal{N}(0,1)$ mit $\mu$ und $\sigma^2$.\\ \vspace{1ex} 
+		Schätzer für Varianz der Stichprobe: $\hat{\sigma}^2 = \frac{1}{n} \sum_{i=1}^{n}(X_1-\mu)^2$ \\ \vspace{2ex}
+		Dann können wir zeigen: \\
+		$\frac{n\hat{\sigma}^2}{\sigma} = \sum_{i=1}^{n}(\frac{X_i}{Nenner})$
+	\end{frame}
 	
 	\begin{frame}{Maß der Effektgröße}
 		$\mathbf{Eta^2}$\\
