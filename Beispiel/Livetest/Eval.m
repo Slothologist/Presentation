@@ -15,4 +15,4 @@ factors = table({'S';'S';'V';'V';'A';'A'},{'1';'2';'1';'2';'1';'2'},...
 rm = fitrm(t,'V1-V6~1','WithinDesign',factors);  % ~1: sind normalverteilt
 
 %% Berechne Varianzanalyse für die Faktoren Wortart und Wiederholung sowie ihre Interaktion
-ranovatbl = ranova(rm,'WithinModel','Wortart * WieSubjektivederholung')
+ranovatbl = ranova(rm,'WithinModel','Wortart * Wiederholung')

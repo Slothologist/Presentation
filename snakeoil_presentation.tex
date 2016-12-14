@@ -247,10 +247,10 @@
 		\begin{itemize}
 			\item $SAQ_{Gesamt}$: $N-1$
 			\item $SAQ_{Effekt}$: $K-1$ \hspace{3em} K: Anzahl Faktorstufen
-			\item $SAQ_{Effekt}$: $K \cdot (n-1)$
+			\item $SAQ_{Fehler}$: $K \cdot (n-1)$
 		\end{itemize}
 		\textbf{Es gilt $\mathbf{FG_{Gesamt} = FG_{Effekt} + FG_{Fehler}}$}
-
+        \note{n: Beobachtungen, die in Faktor eingehen}
 	\end{frame}
 	
 	\begin{frame}{Mittlere Quadratsumme (MQ)}
@@ -390,7 +390,20 @@
 		\end{table}
 	\end{frame}
 	
-	\section{Rechnung an Tafel}
+	\section{Rechnung an Tafel} 
+	
+	\begin{frame}{Werte}
+		\begin{block}{Beispiel}
+			Stress beim Autofahren gemessen am Adrenalingehalt im Blut
+		\end{block}\vspace{2ex}
+		\scalebox{1}{\begin{minipage}{\textwidth}
+				$\begin{array}{lcccccc}\textrm{S-Bahn:} & 27 & 31 & 33 & 34 & 36 & 38\\\textrm{Bus:} & 38 & 41 & 46 & 47 & 53 & 56\\\textrm{Fahrrad:} & 58 & 61 & 62 & 64 & 67 & 70 \end{array}$\\\pause
+			\noindent\hspace*{20.5mm}$\Uparrow$\hspace*{27.5mm}$\Uparrow$\hspace*{5mm}$\Uparrow$
+			\end{minipage}}
+		
+	\end{frame}
+	
+	\againframe{beispiel1}
 	
 	\section{Messwiederholungen}
 	
@@ -433,7 +446,7 @@
 				\item $SAQ_{Block}$ bleibt unberücksichtigt
 				\item $SAQ_{Block} = k \sum_{j=1}^{n}(\bar{y_j}- \bar{y})^2$ mit $k$ Messungen und $n$ VPn
 				\item $SAQ_{Rest} = SAQ_{Gesamt} - SAQ_{Effekt} - SAQ_{Block}$
-				\item $MQ_Rest = \frac{SAQ_{Rest}}{FG_{Rest}}$
+				\item $MQ_{Rest} = \frac{SAQ_{Rest}}{FG_{Rest}}$
 				\item $F = \frac{MQ_{Effekt}}{MQ_{Rest}}$
 			\end{itemize}
 		\end{block}
@@ -823,7 +836,7 @@
 		\begin{table}[]
 			\centering
 			\begin{tabular}{ll|ll|ll}
-				\multicolumn{2}{c|}{\textbf{Subjektive}} & \multicolumn{2}{c|}{\textbf{Verben}} & \multicolumn{2}{c}{\textbf{Adjektive}} \\ \hline
+				\multicolumn{2}{c|}{\textbf{Substantive}} & \multicolumn{2}{c|}{\textbf{Verben}} & \multicolumn{2}{c}{\textbf{Adjektive}} \\ \hline
 				Schuh & Haus & schreien & reden & groß & fröhlich \\
 				Eis & Brille & bestätigen & fluten & bunt & fleißig \\
 				Zug & Hund & wissen & ausgeben & schlecht & müde \\
