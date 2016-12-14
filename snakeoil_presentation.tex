@@ -7,7 +7,7 @@
 \usepackage{multirow}
 \usepackage{pgfpages}
 
-%\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
+\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
 \usetikzlibrary{arrows,positioning}
 
 \renewcommand*{\figurename}{Abb.}
@@ -437,23 +437,28 @@
 	
 	\section{Interaktion}
 	
-	\begin{frame}{Verschiedene Arten der Interaktion}
+	\begin{frame}{Arten der Interaktion}
+	Interaktion findet immer zwischen (mindestens) zwei unterschiedlichen UV statt
 		\begin{itemize}
 			\item Nullinteraktion
 			\item ordinale Interaktion
 			\item disordinale Interaktion
 			\item semidisordinale Interaktion
 		\end{itemize}
+		\note{
+			4 verschiedene Arten möglicher Interaktion\\
+			
+		}
 	\end{frame}
 	
 	
 	\begin{frame}{Nullinteraktion}
 		\begin{itemize}
-			\item keine Interaktion
-			\item Auswirkungen einer UV sind auf allen Stufen der anderen UV gleich
-			\item UVs wirken unabhängig voneinander auf die AV
-			\item Die Kenntnis der Wirkung beider UVs reicht aus, um den Mittelwert jeder Zelle voraussagen zu können
-			\item Liniendiagramm: parallel
+			\item keine Interaktion \note{1.\\}
+			\item Auswirkungen einer UV sind auf allen Stufen der anderen UV gleich \note{2.\\}
+			\item UVs wirken unabhängig voneinander auf die AV \note{3.\\}
+			\item Die Kenntnis der Wirkung beider UVs reicht aus, um den Mittelwert jeder Zelle voraussagen zu können \note{4. Zellen sind dabei ``Untergruppen''\\}
+			\item im Liniendiagramm: parallel \note{5.\\}
 		\end{itemize}
 	\end{frame}
 	
@@ -462,13 +467,23 @@
 			\centering
 			\includegraphics[width=0.8\textwidth]{Bilder/NullI.png}
 		\end{figure}
+		 \note{
+		 Auf die unterschiedlichen Daten achten\\
+		 \begin{itemize}
+			\item[oben links] Unterschiedliche Ausprägung der Faktorstufe haben gleiche Werte\\ 
+			\item[oben rechts] UV ``Präsentationsart'' unterscheidet sich von UV ``Wortart'' aber keine Abhängigkeit voneinander
+			\item[unten links] Umgekehrter Fall zu oben rechts
+			\item[unten rechts] 
+		\end{itemize}
+		 }
 	\end{frame}
 	
 	\begin{frame}{ordinale Interaktion}
 		\begin{itemize}
-			\item liegt vor, wenn sich eine UV auf verschiedenen Stufen der anderen UV unterschiedlich stark auswirkt
-			\item Liniendiagramm: Linien nicht parallel, kreuzen sich aber auch nicht (irrelevant, welche UV wie aufgetragen wird)
+			\item liegt vor, wenn sich eine UV auf verschiedenen Stufen der anderen UV unterschiedlich stark auswirkt \note{1.\\}
+			\item Liniendiagramm: Linien nicht parallel, kreuzen sich aber auch nicht (irrelevant, welche UV wie aufgetragen wird) \note{1.\\}
 		\end{itemize}
+		 \note{Umgangssprachlich: gegenseitig verstärkende Interaktion}
 	\end{frame}
 	
 	\begin{frame}{ordinale Interaktion - Diagramm}
@@ -533,8 +548,8 @@
 	\end{frame}
 	
 	\begin{frame}{Alternativdarstellung}
-		\note{Unterschied zwischen der ursprünglichen und alternativen darstellung:
-		alt: kreutzen der linien essentiell für disordinale Interaktion
+		\note{Unterschied zwischen der ursprünglichen und alternativen darstellung:\\
+		alt: kreutzen der linien essentiell für disordinale Interaktion\\
 		alternativ: richtung der linien essentiell, überschneidung kann vorkommen, muss aber nicht}
 		Experiment
 		\begin{itemize}
@@ -583,33 +598,34 @@
 	\section{Anwendungsvoraussetzungen der Varianzanalyse}
 	
 	\begin{frame}{Allgemeine Voraussetzungen - Zufallsstichproben}
-		\note{Zufallsstichprobe aus der Population werden in der Psychologie kaum verwendet -> was bedeutet das für die Relevanz?}
+		\note{Zufallsstichprobe aus der Population werden in der Psychologie kaum verwendet $\rightarrow$ was bedeutet das für die Relevanz?\\}
 		\begin{itemize}
-			\item Die Qualität der Stichprobe ist wichtig für die Konstruktion der Stichprobenkennwerteverteilung\note{weil diese von einer Zufallsstichprobe ausgeht} \\
+			\item Die Qualität der Stichprobe ist wichtig für die Konstruktion der Stichprobenkennwerteverteilung \note{1. Stichprobenkennwerteverteilung geht von Zufallsstichprobe aus\\} \\
 			 $\rightarrow$ bildet Grundlage für die Signifikanzentscheidung
-			\item Falls die Stichprobe nichtzufällig gezogen ist, konstruiert man eine hypothetische Grundgesamtheit \note{d.h. wir tuen einfach mal so, als wäre unsere Stichprobe repräsentativ}
-			\item für diese gilt dann die entsprechende Stichprobenkennwerteverteilung, damit können wir unser Ergebniss gegen eine Zufallserklärung absichern\note{falls Signifikanz vorliegt}
-			\note{Mal nen Bild dazu an die Tafel, Spuckspasti/ Anekdote zu Nutzerstudien}
+			\item Falls die Stichprobe nichtzufällig gezogen ist, konstruiert man eine hypothetische Grundgesamtheit \note{2. d.h. wir tuen einfach mal so, als wäre unsere Stichprobe repräsentativ\\}
+			\item für diese gilt dann die entsprechende Stichprobenkennwerteverteilung, damit können wir unser Ergebniss gegen eine Zufallserklärung absichern\note{3. falls Signifikanz vorliegt\\}
+			\note{Mal nen Bild dazu an die Tafel, Spuckspasti/ Anekdote zu Nutzerstudien/ }
 		\end{itemize}
-		\note{Diskussionsrunde: Welchen Wert haben die an Universitäten gefundenen Ergebnisse im Hinblick auf die Zufälligkeit der Stichprobe? Zitat: "Im übrigen zeigt gerade die psychologische forschung, dass es offenscihtlich möglich ist, auch mithilfe nichtzufälliger Stichproben zu neuen Erkenntnissen zu gelangen, da praktisch nie mit echten Zufallsstichproben gearbeitet wird"}
+		\note{Diskussionsrunde: Welchen Wert haben die an Universitäten gefundenen Ergebnisse im Hinblick auf die Zufälligkeit der Stichprobe? Zitat: ``Im übrigen zeigt gerade die psychologische Forschung, dass es offensichtlich möglich ist, auch mithilfe nichtzufälliger Stichproben zu neuen Erkenntnissen zu gelangen, da praktisch nie mit echten Zufallsstichproben gearbeitet wird''}
 	\end{frame}
 	
 	\begin{frame}{Allgemeine Voraussetzungen - Unabhängigkeit der Messungen}
 		\begin{itemize}
-			\item Der Einfluss von Störvariablen für jede Messung muss unabhängig sein vom Einfluss der Störvariablen jeder anderen Messung
-			\item Das gilt sowohl innerhalb der, als auch zwischen den Stichproben 
-			\item d.h. insbesondere, dass es keine Subgruppen innerhalb der Stichproben geben darf
-			\note{bla}%TODO hausaufgaben beispiel in die notes
+			\item Der Einfluss von Störvariablen für jede Messung muss unabhängig sein vom Einfluss der Störvariablen jeder anderen Messung\note{1.\\}
+			\item Das gilt sowohl innerhalb der, als auch zwischen den Stichproben \note{2.\\}
+			\item d.h. insbesondere, dass es keine Subgruppen innerhalb der Stichproben geben darf\note{3.\\}
+			\note{Beispiel Hausaufgaben:\\ Versuch, Ziel: beste Art der Hausaufgaben-Erteilung: kurzfristig (zb. jeden Tag die für den nächsten Tag) oder langfristig (am Ende des Monats müssen eine bestimmte Menge an Aufgaben erledigt sein, freie Zeiteinteilung)\\ Stichprobe aus zwei Klassen, die jeweils mit einer der Arten vertraut sind\\ Gemeinsame Vorerfahrung sorgt für abhängige Störvariablen}
+			\note{Anderes Beispiel: Familienmitglieder in einer Studie, bei der Inividualdaten aufgenommen werden $\rightarrow$ Sozialer Background nicht unabhängig voneinander}
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Skalenniveau}
 		\begin{itemize}
 			\item Varianzanalyse macht nur Aussagen über Mittelwerte\\
-			$\rightarrow$ sollte nur auf Daten angewendet werden, bei denen eine Aussage über Mittelwerte sinnvoll ist
-			\item d.h. die erhobenen Daten sollten mindestens einer Metrik unterliegen
-			\item \alert{allerdings:} Manchmal lässt sich aus einer sinnvollen Interpretation auch auf eine sinnvolle Anwendung `` Rückschließen'' \note{hier heiligt der swag die Mittel roflcopter}\\
-			$\rightarrow$ bspw. Schulnoten
+			$\rightarrow$ sollte nur auf Daten angewendet werden, bei denen eine Aussage über Mittelwerte sinnvoll ist\note{1.\\}
+			\item d.h. die erhobenen Daten sollten mindestens einer Metrik unterliegen \note{2.\\}
+			\item \alert{allerdings:} Manchmal lässt sich aus einer sinnvollen Interpretation auch auf eine sinnvolle Anwendung ``Rückschließen'' \note{3. hier heiligt der swag die Mittel roflcopter\\}\\
+			$\rightarrow$ bspw. Schulnoten\note{4. Schulnoten: Ist 1 doppelt so gut wie 2? 4x so gut wie 4? Noten in Prozent angeben $\rightarrow$ beim Programmieren: Erste 80\% der Anforderungen brauchen 20\% der Zeit, die nächsten 20\% 80\% der Zeit}
 			\note{anmerken, dass für die VA die ursprüngliche Population natürlich auch normalverteilt sein muss, bei anderen Verteilungen macht die VA keinen Sinn}
 		\end{itemize}
 	\end{frame}
