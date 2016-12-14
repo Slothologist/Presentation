@@ -352,7 +352,7 @@
 		
 	\end{frame}
 	
-	\begin{frame}{Varianzanalyseplan}
+	\begin{frame}[label=VAPlan]{Varianzanalyseplan}
 		Einfaktorielle Varianzanalyse\\
 		\begin{table}[]
 			\centering
@@ -428,11 +428,55 @@
 	\end{frame}
 	
 	\begin{frame}{Berechnung}
-		\begin{itemize}
-			\item $SAQ_{Rest}$ bleibt unberücksichtigt
-			\item $F = \frac{MQ_{Effekt}}{MQ_{Rest}}$
-		\end{itemize}
-		\alert{TODO: Genauer; eindimensional, zweidimensional, VA-Tafel,... }
+		\begin{block}{Einfaktoriell}
+			\begin{itemize}\itemsep=1ex
+				\item $SAQ_{Block}$ bleibt unberücksichtigt
+				\item $SAQ_{Block} = k \sum_{j=1}^{n}(\bar{y_j}- \bar{y})^2$ mit $k$ Messungen und $n$ VPn
+				\item $SAQ_{Rest} = SAQ_{Gesamt} - SAQ_{Effekt} - SAQ_{Block}$
+				\item $MQ_Rest = \frac{SAQ_{Rest}}{FG_{Rest}}$
+				\item $F = \frac{MQ_{Effekt}}{MQ_{Rest}}$
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Varianzanalysetafel}
+		\begin{block}{Einfaktorielle Varianzanalyse}
+				\begin{table}[]
+					\centering
+					\resizebox{\textwidth}{!} {
+					\begin{tabular}{|l|r|r|r|r|r|r|r|}
+						\hline
+						Quelle  & \multicolumn{1}{l|}{SAQ} & \multicolumn{1}{l|}{FG} & \multicolumn{1}{l|}{MQ} & \multicolumn{1}{l|}{F-Wert} & \multicolumn{1}{l|}{F-krit} & \multicolumn{1}{l|}{Bewertung} & \multicolumn{1}{l|}{$\eta^2$} \\ \hline
+						Effekt  & 22,933                   & 2                       & 11,467                  & 7,398                       & 4,459                       & s.                              & 0,169                         \\ \hline
+						Block   & 100,000                  & 4                       & 25,000                  & 16,123                      & 3,838                       &                                & 0,739                         \\ \hline
+						Fehler  & 12,400                   & 8                       & 1,555                   &                             &                             &                                &                               \\ \hline
+						Varianz & 135,333                  & 14                      &                         &                             &                             &                                &                               \\ \hline
+					\end{tabular}
+				}
+				\end{table}
+		\end{block}
+	\end{frame}
+	
+	\againframe{VAPlan}
+	
+	\begin{frame}{Berechnung}
+		\begin{block}{Zweifaktorielle Varianzanalyse}
+			\begin{center}
+				\begin{tikzpicture}[thick,scale=0.55, every node/.style={scale=0.55}]
+				\draw (-5.5,0) rectangle (14.5,1.5) node[pos=.5] {Gesamt-SAQ};
+				\draw  (-5.5,0) rectangle (4.5,-1.5)  node[pos=.5] {$SAQ_{Effekt}$}; 
+				\draw  (4.5,0) rectangle (14.5,-1.5) node[pos=.5] {$SAQ_{Fehler}$};
+				\draw  (-5.5,-1.5) rectangle (-2.17,-3)  node[pos=.5] {$SAQ_{EffektA}$}; 
+				\draw  (-2.17,-1.5) rectangle (1.16,-3)  node[pos=.5] {$SAQ_{EffektB}$}; 
+				\draw  (1.16,-1.5) rectangle (4.5,-3)  node[pos=.5] {$SAQ_{EffektAxB}$}; 
+				
+				\draw[fill=black!25]  (4.5,-1.5) rectangle (7,-3) node[pos=.5][align=center] {$SAQ_{Block}$\\ \footnotesize Personen};
+				\draw  (7,-1.5) rectangle (9.5,-3) node[pos=.5][align=center] {$SAQ_{RestA}$\\ \footnotesize Fehler A};
+				\draw  (9.5,-1.5) rectangle (12,-3) node[pos=.5][align=center] {$SAQ_{RestB}$\\ \footnotesize Fehler B};
+				\draw  (12,-1.5) rectangle (14.5,-3) node[pos=.5][align=center] {$SAQ_{RestAxB}$\\ \footnotesize Fehler AxB};
+				\end{tikzpicture}
+			\end{center}
+		\end{block}
 	\end{frame}
 	
 	\section{Interaktion}
