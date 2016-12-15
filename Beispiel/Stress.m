@@ -7,11 +7,11 @@ clc;
 load('Stress.mat');
 hold on;
 
-scatter(ones(size(y,1),1), y(:,1),'b');
-scatter(2*ones(size(y,1),1), y(:,2),'b');
-scatter(3*ones(size(y,1),1), y(:,3),'b');
+scatter(ones(size(y(7:12,1),1),1), y(7:12,1),'b');
+scatter(2*ones(size(y(7:12,1),1),1), y(7:12,2),'b');
+scatter(3*ones(size(y(7:12,1),1),1), y(7:12,3),'b');
 
-means = mean(y);
+means = mean(y(7:12,:));
 plot([0.8 1.2], [means(1) means(1)],'k');
 plot([1.8 2.2], [means(2) means(2)],'k');
 plot([2.8 3.2], [means(3) means(3)],'k');
@@ -23,4 +23,7 @@ ylabel('Adrenalingehalt');
 set(gca, 'XTick', [1 2 3], 'XTickLabel', {'S-Bahn', 'Bus', 'Fahrrad'});
 
 saveas(gcf,'stress','epsc2')
+
+anova2(y(7:12,:),3);
+anova1(y(7:12,:));
 hold off;
