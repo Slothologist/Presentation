@@ -2,6 +2,8 @@
 %  Je nach Eingabe muss hier die Länge von Data sowie die VariableNames
 %  geändert werden.
 
+data = importfile('data.txt');
+
 t = table(data(:,1),data(:,2),data(:,3),data(:,4),data(:,5),data(:,6),data(:,7),... % Table aus Array erstellen
 'VariableNames',{'VP','V1','V2','V3','V4','V5','V6'});
 
