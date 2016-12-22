@@ -7,7 +7,7 @@
 \usepackage{multirow}
 \usepackage{pgfpages}
 
-%\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
+%\setbeameroption{show notes on second screen=left}  %% Uncomment this to get Notes
 \usetikzlibrary{arrows,positioning}
 
 \renewcommand*{\figurename}{Abb.}
@@ -27,13 +27,13 @@
 		\tableofcontents[hideallsubsections]
 	\end{frame}
 	
-	\section{Interaktion}
+	\section{Interaktion - Teil II}
 	
 	\begin{frame}{Rückblick}
 		Interaktion
 		\begin{itemize}
 			\item zwischen mindestens zwei (signifikanten!) UV
-			\item eingeteilt in verschiedene Klassen, abhängig von der Aussagekraft der UV
+			\item eingeteilt in verschiedene Klassen, abhängig von der Aussagekraft der UVs
 		\end{itemize}
 	\end{frame}	
 	
@@ -94,85 +94,12 @@
 		}
 	\end{frame}
 	
-	\begin{frame}{Alternativdarstellung}
-		\note{
-			Unterschied zwischen der ursprünglichen und alternativen darstellung:\\
-			ursprünglich: Kreuzen der Linien essentiell für disordinale Interaktion\\
-			alternativ: (Aus-)Richtung der Linien essentiell, Überschneidung kann bei Disordi I vorkommen, muss aber nicht\\
-		}
-		Experiment
+	\begin{frame}{Zusammenfassung}
 		\begin{itemize}
-			\item Gesucht: Ursachen für Aggression
-			\item Frust wird induziert, indem Probanden ein unlösbares Puzzle vorgelegt wird
-			\item Kontrollgruppe mit lösbarem Puzzle
-			\item als UV kommt die Raumtemperatur hinzu (20$^{\circ}$ bzw. 30$^{\circ}$)
+			\item Erkenntnisgewinn durch genauere Analyse der UVs (Generalisierung)
+			\item menschenlesbare Ergebnisse
 		\end{itemize}
-		Prinzip jetzt: Richtung der Linien
-	\end{frame}
-	
-	\begin{frame}{Ordinale Interaktion alternativ}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.6\textwidth]{Bilder/OrdinaleInteraktion1.jpg}
-		\end{figure}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.6\textwidth]{Bilder/OrdinaleInteraktion2.jpg}
-		\end{figure}
-		\note{
-			Bei der ordinalen Interaktion wird unsere Regel (Nicht-Kreuzen) erweitert\\
-			Zusätzlich müssen sich beide Linien in dieselbe Richtung bewegen, z.b. sinken\\
-			In diesem Beispiel: Der Wert von sowohl Hitze als auch keine Hitze muss von Frustration zu keine Frustration sinken\\
-			Was sehen wir hier?\\
-			Beide Achsendarstellungen der Versuchsergebnisse.\\
-			Tritt auf bei ``spitzem Kegel''
-		}
-	\end{frame}
-	
-	
-	\begin{frame}{Disordinale Interaktion alternativ}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.6\textwidth]{Bilder/DisordinaleInteraktion1.jpg}
-		\end{figure}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.6\textwidth]{Bilder/DisordinaleInteraktion2.jpg}
-		\end{figure}
-		\note{
-			Bei der disordinalen Interaktion wird unsere Regel (Nicht-Kreuzen) verwässert\\
-			kreuzen nur noch bei einem von beiden diagrammen notwendig
-			tritt auf, wenn Richtung unterschiedlich und Kreuzen auftritt\\
-			kann auftreten bei ``stumpfem Kegel''
-		}
-	\end{frame}
-	
-	
-	\begin{frame}{Semidisordinale Interaktion alternativ}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.6\textwidth]{Bilder/HybrideInteraktion1.jpg}
-		\end{figure}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.6\textwidth]{Bilder/HybrideInteraktion2.jpg}
-		\end{figure}
-		\note{
-			Tritt auf, wenn Richtung zwar gleich aber trotzdem Kreuzen auftritt\\
-			Alternativ: ``Großer Kegel''
-		}
-	\end{frame}
-	
-	\begin{frame}{Interaktion alternativ - Zusammenfassung}
-		\begin{itemize}
-			\item Beide Linien zeigen in die selbe Richtung, ``spitzer Kegel''\\
-			$\rightarrow$ ordinale Interaktion
-			\item Kreuzen wegen unterschiedlicher Richtungen, ``stumpfer Kegel''\\
-			$\rightarrow$ disordinale Interaktion
-			\item Kreuzen trotz gleicher Richtungen, ``stumpfer Kegel''\\
-			$\rightarrow$ semidisordinale Interaktion
-		\end{itemize}
-	\end{frame}
+	\end{frame}	
 	
 	\section{Anwendungsvoraussetzungen der Varianzanalyse}
 	
@@ -182,10 +109,16 @@
 			\item Die Qualität der Stichprobe ist wichtig für die Konstruktion der Stichprobenkennwerteverteilung \note{1. Stichprobenkennwerteverteilung geht von Zufallsstichprobe aus\\} \\
 			$\rightarrow$ bildet Grundlage für die Signifikanzentscheidung
 			\item Falls die Stichprobe nichtzufällig gezogen ist, konstruiert man eine hypothetische Grundgesamtheit \note{2. d.h. wir tuen einfach mal so, als wäre unsere Stichprobe repräsentativ\\}
-			\item für diese gilt dann die entsprechende Stichprobenkennwerteverteilung, damit können wir unser Ergebniss gegen eine Zufallserklärung absichern\note{3. falls Signifikanz vorliegt\\}
+			\item für diese gilt dann die entsprechende Stichprobenkennwerteverteilung, damit können wir unser Ergebnis gegen eine Zufallserklärung absichern\note{3. falls Signifikanz vorliegt\\}
 			\note{Mal nen Bild dazu an die Tafel, Spuckspasti/ Anekdote zu Nutzerstudien/ }
 		\end{itemize}
 		\note{Diskussionsrunde: Welchen Wert haben die an Universitäten gefundenen Ergebnisse im Hinblick auf die Zufälligkeit der Stichprobe? Zitat: ``Im übrigen zeigt gerade die psychologische Forschung, dass es offensichtlich möglich ist, auch mithilfe nichtzufälliger Stichproben zu neuen Erkenntnissen zu gelangen, da praktisch nie mit echten Zufallsstichproben gearbeitet wird''}
+	\end{frame}
+	
+	\begin{frame}{Diskussion}
+		Welchen Wert haben die an Universitäten gefundenen Ergebnisse im Hinblick auf die Zufälligkeit der Stichprobe?\\
+		
+		 Zitat: ``Im übrigen zeigt gerade die psychologische Forschung, dass es offensichtlich möglich ist, auch mithilfe nichtzufälliger Stichproben zu neuen Erkenntnissen zu gelangen, da praktisch nie mit echten Zufallsstichproben gearbeitet wird'' - Hussy \& Jain
 	\end{frame}
 	
 	\begin{frame}{Allgemeine Voraussetzungen - Unabhängigkeit der Messungen}
@@ -227,6 +160,12 @@
 		}
 	\end{frame}
 	
+	\begin{frame}{}
+			Vielen Dank für eure Aufmerksamkeit!
+	\end{frame}
+	
+	\end{document}
+	
 	\section{Automatisches Berechnen mit Matlab und Python}%TODO komplett streichen?
 	
 	\begin{frame}{Varianzanalyse mit Matlab}
@@ -267,5 +206,85 @@
 	\end{frame}
 	
 \end{document}
+
+\begin{frame}{Alternativdarstellung}
+	\note{
+		Unterschied zwischen der ursprünglichen und alternativen darstellung:\\
+		ursprünglich: Kreuzen der Linien essentiell für disordinale Interaktion\\
+		alternativ: (Aus-)Richtung der Linien essentiell, Überschneidung kann bei Disordi I vorkommen, muss aber nicht\\
+	}
+	Experiment
+	\begin{itemize}
+		\item Gesucht: Ursachen für Aggression
+		\item Frust wird induziert, indem Probanden ein unlösbares Puzzle vorgelegt wird
+		\item Kontrollgruppe mit lösbarem Puzzle
+		\item als UV kommt die Raumtemperatur hinzu (20$^{\circ}$ bzw. 30$^{\circ}$)
+	\end{itemize}
+	Prinzip jetzt: Richtung der Linien
+\end{frame}
+
+\begin{frame}{Ordinale Interaktion alternativ}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{Bilder/OrdinaleInteraktion1.jpg}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{Bilder/OrdinaleInteraktion2.jpg}
+	\end{figure}
+	\note{
+		Bei der ordinalen Interaktion wird unsere Regel (Nicht-Kreuzen) erweitert\\
+		Zusätzlich müssen sich beide Linien in dieselbe Richtung bewegen, z.b. sinken\\
+		In diesem Beispiel: Der Wert von sowohl Hitze als auch keine Hitze muss von Frustration zu keine Frustration sinken\\
+		Was sehen wir hier?\\
+		Beide Achsendarstellungen der Versuchsergebnisse.\\
+		Tritt auf bei ``spitzem Kegel''
+	}
+\end{frame}
+
+
+\begin{frame}{Disordinale Interaktion alternativ}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{Bilder/DisordinaleInteraktion1.jpg}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{Bilder/DisordinaleInteraktion2.jpg}
+	\end{figure}
+	\note{
+		Bei der disordinalen Interaktion wird unsere Regel (Nicht-Kreuzen) verwässert\\
+		kreuzen nur noch bei einem von beiden diagrammen notwendig
+		tritt auf, wenn Richtung unterschiedlich und Kreuzen auftritt\\
+		kann auftreten bei ``stumpfem Kegel''
+	}
+\end{frame}
+
+
+\begin{frame}{Semidisordinale Interaktion alternativ}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{Bilder/HybrideInteraktion1.jpg}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\textwidth]{Bilder/HybrideInteraktion2.jpg}
+	\end{figure}
+	\note{
+		Tritt auf, wenn Richtung zwar gleich aber trotzdem Kreuzen auftritt\\
+		Alternativ: ``Großer Kegel''
+	}
+\end{frame}
+
+\begin{frame}{Interaktion alternativ - Zusammenfassung}
+	\begin{itemize}
+		\item Beide Linien zeigen in die selbe Richtung, ``spitzer Kegel''\\
+		$\rightarrow$ ordinale Interaktion
+		\item Kreuzen wegen unterschiedlicher Richtungen, ``stumpfer Kegel''\\
+		$\rightarrow$ disordinale Interaktion
+		\item Kreuzen trotz gleicher Richtungen, ``stumpfer Kegel''\\
+		$\rightarrow$ semidisordinale Interaktion
+	\end{itemize}
+\end{frame}
 
 	
