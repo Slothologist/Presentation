@@ -7,6 +7,7 @@
 \usepackage{multirow}
 \usepackage{pgfpages}
 \usepackage{cite}
+\usepackage{animate}
 
 %\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
 \usetikzlibrary{arrows,positioning}
@@ -68,17 +69,50 @@
 	
 	
 	\begin{frame}{Auto-ML I}
-		\includegraphics[width=\linewidth]{Bilder/MachineLeaningInANutshell}
+		\begin{alertblock}{Grundlegende Idee}
+			\begin{itemize}
+				\item Starten mit \emph{irgendwie} ausgewählten Hyperparametern
+				\item Classifier trainieren
+				\item Classifier evaluieren
+				\item Hyperparametertuning mithilfe eines Bayesian optimizer
+				\item Wiederholung bis zu einem zufriedenstellenden Ergebnis
+			\end{itemize}
+		\end{alertblock}
 	\end{frame}
 	
 	\begin{frame}{Auto-ML II}
-		\begin{itemize}
-			\item coming soon...
-		\end{itemize}
+		\includegraphics[width=\linewidth]{Bilder/MachineLeaningInANutshell}
+	\end{frame}
+	
+	\begin{frame}{Initialisierung der Hyperparameter}
+		Bild zu problemen mit der initialisierung von hyperparametern
+	\end{frame}
+	
+	\begin{frame}{Rapidly Exploring Random Tree (RTT) I}
+		\begin{alertblock}{Idee}
+			\begin{itemize}
+				\item Werte zufällig wählen
+				\item So oft wiederholen, bis man einen guten Überblick über den Searchspace hat
+			\end{itemize}
+		\end{alertblock}
+		\pause
+		\begin{alertblock}{Vorteil}
+			Bietet beliebig guten Überblick über den Searchspace
+		\end{alertblock}
+		\pause
+		\begin{alertblock}{Achtung}
+			RTT bietet einige Fallstricke. Think before use!
+		\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}{Rapidly Exploring Random Tree (RTT) II}
+		Gif coming as soon as i figured out animategraphics....
+		%\animategraphics[autoplay,loop]{12}{RTT-}{0}{30}
 	\end{frame}
 	
 	\begin{frame}{Probleme}
 		\begin{itemize}
+			\item Ausgesprochen Rechenintensiv
 			\item Unterschiedliche Lernverfahren?
 			\item Es gibt kein ``best'' Lernverfahren, nur ``best at''
 			\item Manche ML-Verfahren erfordern intensive Hyperparameteroptimisierung
@@ -91,6 +125,7 @@
 	
 	
 	\section{Ensembles}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
 	
 	
 	\begin{frame}{}
