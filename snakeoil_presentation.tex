@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{multirow}
 \usepackage{pgfpages}
+\usepackage{cite}
 
 %\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
 \usetikzlibrary{arrows,positioning}
@@ -35,8 +36,9 @@
 			\item Werden \emph{vor} dem Lernen definiert
 			\item Sind in der Regel Zahlen oder Funktionen
 		\end{itemize}
+		\pause
 		\begin{alertblock}{Allgemein}
-			Alles was in irgendeiner Art austauschbar ist in einem speziellen ML-Verfahren
+			Alles was in irgendeiner Art austauschbar ist in einem speziellen ML-Verfahren und während des Trainings konstant bleibt
 		\end{alertblock}
 	\end{frame}
 	
@@ -55,10 +57,10 @@
 	\begin{frame}{Motivation}
 		\begin{itemize}
 			\item Ein gutes neuronales Netz zu trainieren ist schwer, braucht viel Arbeitszeit und Erfahrung
-			\item Jeder sollte in der Lage sein NN zu trainieren (auch Maschinen!)
+			\item Jeder sollte in der Lage sein NN zu trainieren (im besten Fall sogar Maschinen!)
 		\end{itemize}
 		\pause
-		\alert{Lösung: Ein automatisches (und effizeintes) System, welches gute Hyperparameter auswählt, muss her!}
+		\alert{Lösung: Ein automatisches (und effizientes) System, welches gute Hyperparameter auswählt, muss her!}
 	\end{frame}
 	
 	
@@ -75,6 +77,15 @@
 		\end{itemize}
 	\end{frame}
 	
+	\begin{frame}{Probleme}
+		\begin{itemize}
+			\item Unterschiedliche Lernverfahren?
+			\item Es gibt kein ``best'' Lernverfahren, nur ``best at''
+			\item Manche ML-Verfahren erfordern intensive Hyperparameteroptimisierung
+			\item Bayes optimization sollte sich jedoch um dieses Problem kümmern
+		\end{itemize}
+	\end{frame}
+	
 	\section{Meta Learning}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	
@@ -87,6 +98,11 @@
 	\end{frame}
 	
 	\section{Fragerunde}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{frame}{Quellen}
+		\bibliography{demo}
+		\bibliographystyle{plain}
+	\end{frame}
 	
 \end{document}
 	
