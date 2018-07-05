@@ -122,10 +122,59 @@
 	
 	\section{Meta Learning}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
+	\begin{frame}{}
+		coming soon
+	\end{frame}
 	
+	% FORMICA
+	% flexible, framework
+	% observatory, of
+	% robust, robotic 
+	% modular
+	% interdisziplanary
+	% cognitive
+	% ants
 	
 	\section{Ensembles}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
+	\begin{frame}{Bestandsaufnahme}
+		\begin{itemize}
+			\item Mehrere vielversprechende ML-Verfahren ausgewählt
+			\item Jedes davon aufwändig mit Bayesian optimizer im Hinblick auf Hyperparameter getunt
+			\item Das beste der Besten herausgepickt und die anderen weggeworfen
+		\end{itemize}
+		\pause
+		\alert{\LARGE{Warum eigentlich?}}
+	\end{frame}
+	
+	\begin{frame}{Ensembles}
+		\begin{alertblock}{Idee}
+			\begin{itemize}
+				\item Anstatt teuer optimierte Klassifikatoren wegzuwerfen, Kombination der Besten
+			\end{itemize}
+		\end{alertblock}
+		\pause
+		\alert{Aber wie kombinieren?}
+		\begin{itemize}
+			\item Alle ungewichtet aufsummieren?
+			\item Stacking?
+			\item gradient-free numerical optimization?
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Ensemble Selection}
+		\begin{alertblock}{Wie baut man ein Ensemble?}
+			\begin{itemize}
+				\item Starte mit einem leeren Ensemble
+				\item Füge den Klassifikator dem Ensemble hinzu, der das Ensemble am besten ergänzt
+				\item Wiederhole bis alle Klassifikatoren enthalten sind oder X mal
+				\item Durchschnitt über alle Predictions bilden für Resultat
+				\pause
+				\item Alle Einträge sind ungewichtet
+				\item Duplikationen sind erlaubt
+			\end{itemize}
+	\end{alertblock}
+	\end{frame}
 	
 	
 	\begin{frame}{}
