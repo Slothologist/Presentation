@@ -137,7 +137,18 @@
 	\end{frame}
 	
 	\begin{frame}{Im Detail}
-		
+		\begin{alertblock}{Erstellung des Meta-Klassifikators}
+			\begin{itemize}
+				\item Für eine (große) Menge an bereits bekannten Sets: Metafeatures berechnen \\ $\Rightarrow$ class-probability, categorical-numerical-ratio, number of classes/features/instances (missing)
+				\item Einen Klassifikator (SMAC) auf diesen Meta-Features trainieren
+			\end{itemize}
+		\end{alertblock}
+		\pause
+		\begin{alertblock}{Auswertung}
+			\begin{itemize}
+				\item Für ein neues Datenset werden anhand der $L_1$ Distanz zu den bereits bekannten Datensets Klassifikatoren ausgewählt
+			\end{itemize}
+		\end{alertblock}
 	\end{frame}
 	
 	% FORMICA
