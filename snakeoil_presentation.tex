@@ -7,10 +7,13 @@
 \usepackage{multirow}
 \usepackage{pgfpages}
 \usepackage{cite}
+\usepackage{graphicx}
 \usepackage{animate}
 
+\usepackage{multimedia}
+
 %\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
-\usetikzlibrary{arrows,positioning}
+
 
 \renewcommand*{\figurename}{Abb.}
 
@@ -106,8 +109,8 @@
 	\end{frame}
 	
 	\begin{frame}{Rapidly Exploring Random Tree (RTT) II}
-		Gif coming as soon as i figured out animategraphics....
-		%\animategraphics[autoplay,loop]{12}{RTT-}{0}{30}
+		\centering
+		\movie[width=1.0\textwidth,poster,autostart,showcontrols,loop]{\includegraphics[width=1.0\textwidth]{Bilder/RTT-0.png}}{Bilder/RTT.mp4}
 	\end{frame}
 	
 	\begin{frame}{Probleme}
@@ -122,8 +125,19 @@
 	
 	\section{Meta Learning}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
-	\begin{frame}{}
-		coming soon
+	\begin{frame}{Meta Learning}
+		\begin{alertblock}{Idee}
+			\begin{itemize}
+				\item Das richte ML-Verfahren für ein bestimmtes Datenset hängt vom Datenset selbst ab
+				\item Ein bestimmter Klassifikator sollte auf ähnlichen Datensets ähnlich gute Ergebnisse liefern
+				\pause
+			\end{itemize}
+			$\Rightarrow$ Also bauen wir uns einen Klassifikator, der uns anhand eines neuen Datensets sagt, welche Art von Klassifikator wir trainieren sollten
+		\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}{Im Detail}
+		
 	\end{frame}
 	
 	% FORMICA
