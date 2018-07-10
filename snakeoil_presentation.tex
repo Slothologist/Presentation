@@ -202,7 +202,32 @@
 	\end{frame}
 	
 	
-	\section{Anwendung und Ergebnisse}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Anwendung und Ergebnisse}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{frame}{Anwendung und Evaluation}
+		\begin{alertblock}{Setup}
+			\begin{itemize}
+				\item Meta-learning mit 38 Features für 24h auf 140 OpenML Datensets (2/3 zu 1/3)
+				\item Bayesian optimizer auf den 25 besten, Ensemble mit Größe 50
+			\end{itemize}
+		\end{alertblock}
+		\pause
+		\begin{alertblock}{Auffälligkeiten und Ergebnisse}
+			\begin{itemize}
+				\item Meta-learning und Ensemble Selection verbessert bisherige Ansätze deutlich
+				\item Besonders bei kurzer Rechenzeit performt die Kombination ML+ES signifikant besser
+				\item Mithilfe von ML+ES wird in der Regel ein hinreichend optimaler Klassifikator gefunden
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}{Hinreichende Optimalität}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=\linewidth]{Bilder/HinreichendeOptimalitaet}
+			\caption{Median balanced test error rate (BER) of optimizing AUTO - SKLEARN subspaces for each classification SVM method}
+		\end{figure}
+	\end{frame}
 	
 	\begin{frame}{Recap}
 		\begin{alertblock}{Errungenschaften}
@@ -217,7 +242,7 @@
 				\item Rechenkosten
 				\item Für sehr rechenaufwendige Verfahren (z.b. Deep Learning) nur eingeschränkt zu gebrauchen
 				\pause
-				\item wird aber durch recht gute Parallelisierbarkeit teilweise wieder ausgeglichen 
+				\item Wird aber durch recht gute Parallelisierbarkeit teilweise wieder ausgeglichen 
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
