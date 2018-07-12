@@ -36,6 +36,7 @@
 	
 	\begin{frame}{Interlude: Hyperparameter I}
 		Was sind Hyperparameter?
+		\pause
 		\begin{itemize}
 			\item Werden \emph{vor} dem Lernen definiert
 			\item Sind in der Regel Zahlen oder Funktionen
@@ -50,7 +51,7 @@
 		Beispiele für Hyperparameter
 		\begin{itemize}
 			\item Lernrate
-			\item Gewichte jeglicher Form
+			\item (manche) Gewichte
 			\item Anzahl der Cluster in k-means clustering
 			\item Aktivierungsfunktionen
 			\item Anzahl der Hidden Layers in einem Netz
@@ -60,8 +61,8 @@
 	
 	\begin{frame}{Motivation}
 		\begin{itemize}
-			\item Ein gutes neuronales Netz zu trainieren ist schwer, braucht viel Arbeitszeit und Erfahrung
-			\item Jeder sollte in der Lage sein NN zu trainieren (im besten Fall sogar Maschinen!)
+			\item Einen guten Klassifikator zu trainieren ist schwer, braucht viel Arbeitszeit und Erfahrung
+			\item Jeder sollte in der Lage sein Klassifikatoren zu trainieren (im besten Fall sogar Maschinen!)
 		\end{itemize}
 		\pause
 		\alert{Lösung: Ein automatisches (und effizientes) System, welches gute Hyperparameter auswählt, muss her!}
@@ -96,7 +97,7 @@
 		\end{figure}
 	\end{frame}
 	
-	\begin{frame}{Rapidly Exploring Random Tree (RTT) I}
+	\begin{frame}{Rapidly Exploring Random Tree (RRT) I}
 		\begin{alertblock}{Idee}
 			\begin{itemize}
 				\item Werte zufällig wählen
@@ -119,7 +120,7 @@
 		\movie[width=1.0\textwidth,poster,autostart,showcontrols,loop]{\includegraphics[width=1.0\textwidth]{Bilder/RTT-0.png}}{Bilder/RTT.mp4}
 	\end{frame}
 	
-	\begin{frame}{Probleme}
+	\begin{frame}{Probleme bisher}
 		\begin{itemize}
 			\item Ausgesprochen Rechenintensiv
 			\item Unterschiedliche Lernverfahren?
@@ -134,7 +135,7 @@
 	\begin{frame}{Meta Learning}
 		\begin{alertblock}{Idee}
 			\begin{itemize}
-				\item Das richte ML-Verfahren für ein bestimmtes Datenset hängt vom Datenset selbst ab
+				\item Das richtige ML-Verfahren für ein bestimmtes Datenset hängt vom Datenset selbst ab
 				\item Ein bestimmter Klassifikator sollte auf ähnlichen Datensets ähnlich gute Ergebnisse liefern
 				\pause
 			\end{itemize}
@@ -239,7 +240,7 @@
 		\begin{alertblock}{Errungenschaften}
 			\begin{itemize}
 				\item Automatisiertes Maschinenlernen!
-				\item Gute Ergebnisse sind auch ohne Vorwissen oder genaue Kenntnisse der einzelnen Verfahre möglich
+				\item Gute Ergebnisse sind auch ohne Vorwissen oder genaue Kenntnisse der einzelnen Verfahren möglich
 			\end{itemize}
 		\end{alertblock}
 		\pause
