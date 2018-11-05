@@ -38,7 +38,10 @@
 	\end{frame}
 	
 	\begin{frame}{Content}
-		What 
+		
+		\begin{alertblock}{What is Speechrec? What does it consist of?}
+		\end{alertblock}
+		
 	\end{frame}
 	
 	\begin{frame}{Content}
@@ -76,11 +79,29 @@
 	\section{Voice Activation Detection}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\begin{frame}{What we use}
-		content...
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=.8\linewidth]{Bilder/VAD.jpg}
+			\caption{Double threshold voice activation detection}
+		\end{figure}
 	\end{frame}
 	
-	\begin{frame}{other approaches}
-		content...
+	\begin{frame}{What we use II}
+		A voice activation detection based on audio loudness with three states: 
+		\begin{itemize}
+			\item[idle] Start in this state
+			\item[starting] switch to this state if the audio $>$ StartDb and stay here as long as audio $>$ UtteranceDb
+			\item[ending] switch to this state if the audio $<$ UtteranceDb and stay as long as specified via Silence, then return to idle
+		\end{itemize}
+		A maximum audio length can be specified via Timeout
+	\end{frame}
+	
+	\begin{frame}{Other approaches} % TODO check formatting wtf
+		\begin{itemize}
+			\item[loudness-based] based on decibel calculation, it will only take into account the single most extreme value in an audio frame
+			\item[energy-based] in contrast to loudness-based approaches, energy calculation will take all values in an audio frame into consideration
+			\item[frequency-based] will calculate frequencies and search for those typically used by human speech
+		\end{itemize}
 	\end{frame}
 	
 	\section{Speaker Recognition}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -99,6 +120,10 @@
 		content...
 	\end{frame}
 	
+	\begin{frame}{Corrected Spelling vs Phoneme based recognition}
+		content...
+	\end{frame}
+	
 	\begin{frame}{Sphinx}
 		content...
 	\end{frame}
@@ -111,12 +136,26 @@
 		content...
 	\end{frame}
 	
+	\section{Natural Language Processing}
+	
+	\begin{frame}{Idea}
+		\begin{itemize}
+			\item Just recognizing what was said does not solve all our problems
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{}
+		content...
+	\end{frame}
 	
 	\begin{frame}{}
 		Thanks for the Attention!
 	\end{frame}
 	
-	\section{Discussion/ Question Round}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}{}
+		Discussion
+	\end{frame}
+	
 	
 	\begin{frame}{Sources}
 		\bibliography{demo}
