@@ -15,7 +15,7 @@
 %\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
 
 
-\renewcommand*{\figurename}{Abb.}
+%\renewcommand*{\figurename}{Abb.}
 
 
 
@@ -33,7 +33,6 @@
 			\item faster and more general way to give robots commands
 			\item a necessity for casual users
 			\item user does not need additional hardware
-			\item 
 		\end{itemize}
 	\end{frame}
 	
@@ -49,7 +48,7 @@
 		\tableofcontents[hideallsubsections]
 	\end{frame}
 	
-	\begin{frame}{}
+	\begin{frame}{Quick example}
 		content...
 	\end{frame}
 	
@@ -62,6 +61,10 @@
 	
 	\begin{frame}{Microphone Arrays}
 		content...
+	\end{frame}
+	
+	\begin{frame}{Alsa}
+		The Advanced Linux Sound Architecture
 	\end{frame}
 	
 	\section{Localisation}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -96,11 +99,12 @@
 		A maximum audio length can be specified via Timeout
 	\end{frame}
 	
-	\begin{frame}{Other approaches} % TODO check formatting wtf
+	\begin{frame}{Other approaches}
+		Based on...
 		\begin{itemize}
-			\item[loudness-based] based on decibel calculation, it will only take into account the single most extreme value in an audio frame
-			\item[energy-based] in contrast to loudness-based approaches, energy calculation will take all values in an audio frame into consideration
-			\item[frequency-based] will calculate frequencies and search for those typically used by human speech
+			\item[loudness] based on decibel calculation, it will only take into account the single most extreme value in an audio frame
+			\item[energy] in contrast to loudness-based approaches, energy calculation will take all values in an audio frame into consideration
+			\item[frequency] will calculate frequencies and search for those typically used by human speech
 		\end{itemize}
 	\end{frame}
 	
@@ -116,12 +120,22 @@
 		Online
 	\end{frame}
 	
+	\begin{frame}{Hidden Markov Models}
+		content...
+	\end{frame}
+	
+	\begin{frame}{Deep Learning}
+		content...
+	\end{frame}
+	
 	\begin{frame}{Grammar vs Grammarless}
 		content...
 	\end{frame}
 	
 	\begin{frame}{Corrected Spelling vs Phoneme based recognition}
-		content...
+		\begin{itemize}
+			\item 
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Sphinx}
@@ -133,19 +147,83 @@
 	\end{frame}
 	
 	\begin{frame}{Google/Bing/... Online Speechrec}
-		content...
-	\end{frame}
-	
-	\section{Natural Language Processing}
-	
-	\begin{frame}{Idea}
+		Commercial "Cloud" services provided by companies like Google, Amazon, Microsoft, etc.
 		\begin{itemize}
-			\item Just recognizing what was said does not solve all our problems
+			\item kind of a blackbox
+			\item need \emph{fast} internet connections
+			\item typically better results than local speechrec
+			\item not free, can be quite expensive if used extensively
 		\end{itemize}
 	\end{frame}
 	
-	\begin{frame}{}
-		content...
+	\section{Natural Language Processing}% rather done
+	
+	\begin{frame}{Idea}
+		Just recognizing what was said does not solve all our problems. We need to \emph{understand} what was said.
+		\pause
+		\begin{itemize}
+			\item direct mapping?
+			\pause
+			\item keywordspotting?
+			\pause
+			\item how to do planning?
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Grammar Analysis}
+		Idea: Create the grammar tree of a sentence, thus making it easier to extract information.
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=.7\linewidth]{Bilder/grammar_tree.png}
+			\caption{Example of a grammar tree. Source: https://www.nltk.org/book/ch08.html}
+		\end{figure}
+		
+		%See also module "23-LIN-Inf Computerlinguistische Grundlagen für Informatik-Studierende"
+	\end{frame}
+	
+	\begin{frame}{Beyong Grammar}
+		More intensive forms of analysis can involve:
+		\begin{itemize}
+			\item Statistical analysis of sentences/phrases
+			\item tagging of phrases
+			\item dependency parsing
+			\item tokenization
+		\end{itemize} 
+	\end{frame}
+	
+	\begin{frame}{What do we use?}
+		With Pocketsphinx: 
+		
+		\pause
+		Not that much :(
+		
+		With Google Speechrec:
+		
+		\pause
+		spaCy, a python library which can...
+		\begin{itemize}
+			\item create a grammar tree of a sentence
+			\item classify phrases and words (in context)
+			\item abstract information out of text
+			\item analyse the similarity of two sentences
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{spaCy example}
+		From Wikipedia:
+		
+		\emph{"RoboCup is an annual international robotics competition proposed and founded in 1996 (Pre-RoboCup) by a group of university professors (among which Hiroaki Kitano, Manuela M. Veloso, and Minoru Asada). The aim of such a competition consists of promoting robotics and AI research, by offering a publicly appealing, but formidable challenge."}
+		\pause
+		
+		spaCy:
+		
+		RoboCup ORG,
+		1996 DATE,
+		Hiroaki Kitano ORG,
+		Manuela M. Veloso PERSON,
+		Minoru Asada PERSON,
+		AI GPE
 	\end{frame}
 	
 	\begin{frame}{}
@@ -235,18 +313,6 @@
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{Auto-ML II}
-		\includegraphics[width=\linewidth]{Bilder/MachineLeaningInANutshell}
-	\end{frame}
-	
-	\begin{frame}{Initialisierung der Hyperparameter}
-		
-		\begin{figure}[ht]
-			\centering
-			\includegraphics[width=0.85\linewidth]{Bilder/InitialConditions.png}
-			\caption{Quelle: http://www.engineerexcel.com/excel-solver-solving-method-choose/}
-		\end{figure}
-	\end{frame}
 	
 	\begin{frame}{Rapidly Exploring Random Tree (RRT) I}
 		\begin{alertblock}{Idee}
@@ -379,13 +445,6 @@
 		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{Hinreichende Optimalität}
-		\begin{figure}[ht]
-			\centering
-			\includegraphics[width=\linewidth]{Bilder/HinreichendeOptimalitaet}
-			\caption{Median balanced test error rate (BER) of optimizing AUTO - SKLEARN subspaces for each classification SVM method}
-		\end{figure}
-	\end{frame}
 	
 	\begin{frame}{Recap}
 		\begin{alertblock}{Errungenschaften}
