@@ -11,6 +11,9 @@
 \usepackage{animate}
 
 \usepackage{multimedia}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{svg}
 
 %\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
 
@@ -56,15 +59,82 @@
 	\section{Hardware}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\begin{frame}{Microphones}
-		content...
+		\begin{figure}[ht]
+			\centering
+			\subfloat[dynamic microphone]{
+				\includegraphics[width=.5\textwidth]{Bilder/mic-dynamic.jpg}
+			}
+			\subfloat[condenser microphone]{
+				\includegraphics[width=.5\textwidth]{Bilder/Condenser-Mic-Diagram.jpg}
+			}
+			\caption{Diffrent kinds of microphones. Source: http://www.onlinetuner.co}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Microphones: Polar Patterns}
+		\begin{figure}[ht]
+			\centering
+			\subfloat[cardioid pattern]{
+				\includegraphics[width=.33\textwidth]{Bilder/Polar_pattern_cardioid.png}
+			}
+			\subfloat[directional pattern]{
+				\includegraphics[width=.33\textwidth]{Bilder/Polar_pattern_directional.png}
+			}
+			\subfloat[omnidirectional pattern]{
+				\includegraphics[width=.33\textwidth]{Bilder/Polar_pattern_omnidirectional.png}
+			}
+			\caption{Diffrent kinds of microphone pattern. Source: Wikipedia}
+		\end{figure}
 	\end{frame}
 	
 	\begin{frame}{Microphone Arrays}
-		content...
+		\begin{alertblock}{Why?}
+			\begin{itemize}
+				\item more sensors are always better
+				\item several microphones can be linked together to reduce noise
+				\item by analysing the distribution of signals and frequencies in time we can even detect the direction from where a sound was emitted
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}{Microphone Arrays II}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=.8\linewidth]{Bilder/mic_voice_position.png}
+			\caption{Matrix Voice, a microphone array. Source: https://matrix-io.github.io/matrix-documentation/matrix-voice/resources/microphone/}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{What do we use?}
+		Tobi:
+		\pause
+		One or two directional microphones, 2 additional for sound source localization.
+		
+		Pepper:
+		\pause
+		An array of four omnidirectional microphones inside of the head.
+		
+		Tiago:
+		\pause
+		Stereo microphones in the torso (black spots under his head).
 	\end{frame}
 	
 	\begin{frame}{Alsa}
-		The Advanced Linux Sound Architecture
+		The Advanced Linux Sound Architecture manages all your physical and virtual microphones and speakers.
+		\begin{itemize}
+			\item It controls volume and gain
+			\item It controls rate and bitrate of captured audio, as well as other properties
+			\item Extensive configuration makes basically any imaginable microphone constellation possible
+		\end{itemize}
+		
+		\pause
+		
+		Honorable mention: pulseaudio
+		\pause
+		\begin{itemize}
+			\item \emph{many} extensions (called modules) to suit all kinds of needs
+			\item eg. virtual devices over network, on the fly filtering, etc.
+		\end{itemize}
 	\end{frame}
 	
 	\section{Localisation}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,7 +149,7 @@
 		content...
 	\end{frame}
 	
-	\section{Voice Activation Detection}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Voice Activation Detection}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% rather done
 	
 	\begin{frame}{What we use}
 		\begin{figure}[ht]
@@ -156,7 +226,7 @@
 		\end{itemize}
 	\end{frame}
 	
-	\section{Natural Language Processing}% rather done
+	\section{Natural Language Processing}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% rather done
 	
 	\begin{frame}{Idea}
 		Just recognizing what was said does not solve all our problems. We need to \emph{understand} what was said.
