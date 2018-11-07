@@ -10,10 +10,13 @@
 \usepackage{graphicx}
 \usepackage{animate}
 
+
 \usepackage{multimedia}
 \usepackage{float}
 \usepackage{subfig}
 \usepackage{svg}
+\usepackage{enumitem}
+
 
 %\setbeameroption{show notes on second screen=right}  %% Uncomment this to get Notes
 
@@ -33,9 +36,9 @@
 	\begin{frame}{Motivation}
 		Why even bother?
 		\begin{itemize}
-			\item faster and more general way to give robots commands
-			\item a necessity for casual users
-			\item user does not need additional hardware
+			\item[-] faster and more general way to give robots commands
+			\item[-] a necessity for casual users
+			\item[-] user does not need additional hardware
 		\end{itemize}
 	\end{frame}
 	
@@ -71,6 +74,18 @@
 		\end{figure}
 	\end{frame}
 	
+	\begin{frame}{Audio}
+		Microphones provide audio defined by:
+		\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+			\setlength\itemindent{50pt}
+			\item[rate:] resolution in time domain
+			\item[bitrate:] resolution in quality domain
+			\item[endian:] representation of signal
+			\item[channel:] amount of channels 
+			\item[interleaving:] representation of signal by channel
+		\end{itemize}
+	\end{frame}
+	
 	\begin{frame}{Microphones: Polar Patterns}
 		\begin{figure}[ht]
 			\centering
@@ -90,9 +105,9 @@
 	\begin{frame}{Microphone Arrays}
 		\begin{alertblock}{Why?}
 			\begin{itemize}
-				\item more sensors are always better
-				\item several microphones can be linked together to reduce noise
-				\item by analysing the distribution of signals and frequencies in time we can even detect the direction from where a sound was emitted
+				\item[-] more sensors are always better
+				\item[-] several microphones can be linked together to reduce noise
+				\item[-] by analysing the distribution of signals and frequencies in time we can even detect the direction from where a sound was emitted
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
@@ -122,9 +137,9 @@
 	\begin{frame}{Alsa}
 		The Advanced Linux Sound Architecture manages all your physical and virtual microphones and speakers.
 		\begin{itemize}
-			\item It controls volume and gain
-			\item It controls rate and bitrate of captured audio, as well as other properties
-			\item Extensive configuration makes basically any imaginable microphone constellation possible
+			\item[-] It controls volume and gain
+			\item[-] It controls rate and bitrate of captured audio, as well as other properties
+			\item[-] Extensive configuration makes basically any imaginable microphone constellation possible
 		\end{itemize}
 		
 		\pause
@@ -132,8 +147,8 @@
 		Honorable mention: pulseaudio
 		\pause
 		\begin{itemize}
-			\item \emph{many} extensions (called modules) to suit all kinds of needs
-			\item eg. virtual devices over network, on the fly filtering, etc.
+			\item[-] \emph{many} extensions (called modules) to suit all kinds of needs
+			\item[-] eg. virtual devices over network, on the fly filtering, etc.
 		\end{itemize}
 	\end{frame}
 	
@@ -183,20 +198,62 @@
 	\section{Speech Recognition}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\begin{frame}{Approaches}
-		Hidden Markov Models
-		vs
-		Deep Learing
-		vs 
-		Online
+		There are three big approaches for consumer/ robotics speech recognition:
+		\begin{itemize}
+			\item Hidden Markov Models
+			\item Deep Learing
+			\item Online Services
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Hidden Markov Models}
-		content...
+		Hidden Markov models are statistical models where a system is assumed to be a markov process with hidden states.
+		\begin{itemize}
+			\item[-] imagine a statemachine where the transitions are modeled by probabilities
+			\item[-] states in this statemachine can be roughly understood as phonemes
+			\item[-] a most probable path through the model can be computed for a given sequence of signals or data 
+			\item[-] this path is can then be mapped to a spoken word or sequence of words
+			\item[-] states are unknown (hidden) and assumed via probabilities
+		\end{itemize}
 	\end{frame}
 	
-	\begin{frame}{Deep Learning}
-		content...
+	\begin{frame}{Sphinx}
+		A HMM based group of application which use 
+		\begin{itemize}
+			\item[-] a speech model (models phenomes)
+			\item[-] a dictionary (maps phonemes to words)
+			\item[-] a language model (probabilities of word sequences)
+		\end{itemize}
+		
+		Recent versions can provide quasi-free speech recognition.
 	\end{frame}
+	
+	\begin{frame}{Deep Learning \& DeepSpeech}
+		Deep Learning
+		\begin{itemize}
+			\item[-] \emph{very} big field
+			\item[-] computationally expensive concept to abstract high level information out of big chunks of data
+		\end{itemize}
+		\pause
+		DeepSpeech
+		\begin{itemize}
+			\item[-] ML architecture by Baidu
+			\item[-] several implementations, e.g. by mozilla using tensorflow
+			\item[-] detects free speech, but is somewhat phoneme based
+			\item[-] currently one of the best architectures in regards to word error rate
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Google/Bing/... Online Speechrec}
+		Commercial "Cloud" services provided by companies like Google, Amazon, Microsoft, etc.
+		\begin{itemize}
+			\item[-] kind of a blackbox
+			\item[-] need \emph{fast} internet connections
+			\item[-] typically better results than local speechrec
+			\item[-] not free, can be quite expensive if used extensively
+		\end{itemize}
+	\end{frame}
+	
 	
 	\begin{frame}{Grammar vs Grammarless}
 		content...
@@ -207,22 +264,17 @@
 			\item 
 		\end{itemize}
 	\end{frame}
-	
-	\begin{frame}{Sphinx}
-		content...
-	\end{frame}
-	
-	\begin{frame}{Deepspeech}
-		content...
-	\end{frame}
-	
-	\begin{frame}{Google/Bing/... Online Speechrec}
-		Commercial "Cloud" services provided by companies like Google, Amazon, Microsoft, etc.
+	\begin{frame}{What do we use?}
+		For everyday use:
+		\pause
 		\begin{itemize}
-			\item kind of a blackbox
-			\item need \emph{fast} internet connections
-			\item typically better results than local speechrec
-			\item not free, can be quite expensive if used extensively
+			\item (Pocket-)Sphinx
+		\end{itemize}
+		
+		For special cases:
+		\pause
+		\begin{itemize}
+			\item Google Speechrec
 		\end{itemize}
 	\end{frame}
 	
@@ -232,11 +284,11 @@
 		Just recognizing what was said does not solve all our problems. We need to \emph{understand} what was said.
 		\pause
 		\begin{itemize}
-			\item direct mapping?
+			\item[-] direct mapping?
 			\pause
-			\item keywordspotting?
+			\item[-] keywordspotting?
 			\pause
-			\item how to do planning?
+			\item[-] how to do planning?
 		\end{itemize}
 	\end{frame}
 	
@@ -255,10 +307,10 @@
 	\begin{frame}{Beyong Grammar}
 		More intensive forms of analysis can involve:
 		\begin{itemize}
-			\item Statistical analysis of sentences/phrases
-			\item tagging of phrases
-			\item dependency parsing
-			\item tokenization
+			\item[-] Statistical analysis of sentences/phrases
+			\item[-] tagging of phrases
+			\item[-] dependency parsing
+			\item[-] tokenization
 		\end{itemize} 
 	\end{frame}
 	
@@ -273,10 +325,10 @@
 		\pause
 		spaCy, a python library which can...
 		\begin{itemize}
-			\item create a grammar tree of a sentence
-			\item classify phrases and words (in context)
-			\item abstract information out of text
-			\item analyse the similarity of two sentences
+			\item[-] create a grammar tree of a sentence
+			\item[-] classify phrases and words (in context)
+			\item[-] abstract information out of text
+			\item[-] analyse the similarity of two sentences
 		\end{itemize}
 	\end{frame}
 	
