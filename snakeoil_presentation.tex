@@ -70,14 +70,13 @@
 			\subfloat[condenser microphone]{
 				\includegraphics[width=.5\textwidth]{Bilder/Condenser-Mic-Diagram.jpg}
 			}
-			\caption{Diffrent kinds of microphones. Source: http://www.onlinetuner.co}
+			\caption{Different kinds of microphones. Source: http://www.onlinetuner.co}
 		\end{figure}
 	\end{frame}
 	
 	\begin{frame}{Audio}
 		Microphones provide audio defined by:
-		\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-			\setlength\itemindent{50pt}
+		\begin{itemize}[leftmargin=*,labelindent=50pt]
 			\item[rate:] resolution in time domain
 			\item[bitrate:] resolution in quality domain
 			\item[endian:] representation of signal
@@ -155,7 +154,40 @@
 	\section{Localisation}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\begin{frame}{Sound Source Localisation}
-		content...
+		Basic Idea:
+		\begin{itemize}
+			\item[-] more than one microphone is required
+			\item[-] four microphones are required for "exact" localisation
+			\item[-] can be seperated into 2 sub-problems: time delay estimation and position estimation
+			\item[-] time delay estimation guesses the time differences with which a sound arrives at different microphones
+			\item[-] position estimation  tries to locate the soundsource based on these guesses
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Time Delay Estimation}
+		Approaches:
+		\begin{itemize}[leftmargin=*,labelindent=16pt]
+			\item[-] time domain approximation
+			\item[-] frequency based
+			\item[-] statistical approaches
+		\end{itemize}
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=.8\linewidth]{Bilder/ssl.png}
+			\caption{Source: https://cecas.clemson.edu/~stb/research/acousticloc/}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Position estimation}
+		Sound source localisation is not exact
+		\begin{itemize}
+			\item[-] TDE is just an estimation (duh)
+			\item[-] because of superposition TDE may provide false positives
+			\item[-] position estimation can be interpreted as (n-1)-dimensional optimization problem
+			\item[-] optimization problems can be solved by eg. gradient descent or conjugate gradients
+		\end{itemize}
+		(see Mario Botsch's Scientific Computing course for more information about solving these problems)
 	\end{frame}
 	
 	\section{Signal Enhancing}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,7 +208,7 @@
 	
 	\begin{frame}{What we use II}
 		A voice activation detection based on audio loudness with three states: 
-		\begin{itemize}
+		\begin{itemize}[leftmargin=*,labelindent=32pt]
 			\item[idle] Start in this state
 			\item[starting] switch to this state if the audio $>$ StartDb and stay here as long as audio $>$ UtteranceDb
 			\item[ending] switch to this state if the audio $<$ UtteranceDb and stay as long as specified via Silence, then return to idle
@@ -186,7 +218,7 @@
 	
 	\begin{frame}{Other approaches}
 		Based on...
-		\begin{itemize}
+		\begin{itemize}[leftmargin=*,labelindent=32pt]
 			\item[loudness] based on decibel calculation, it will only take into account the single most extreme value in an audio frame
 			\item[energy] in contrast to loudness-based approaches, energy calculation will take all values in an audio frame into consideration
 			\item[frequency] will calculate frequencies and search for those typically used by human speech
@@ -264,6 +296,7 @@
 			\item 
 		\end{itemize}
 	\end{frame}
+	
 	\begin{frame}{What do we use?}
 		For everyday use:
 		\pause
