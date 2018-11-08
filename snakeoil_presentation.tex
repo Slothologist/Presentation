@@ -287,13 +287,34 @@
 	\end{frame}
 	
 	
-	\begin{frame}{Grammar vs Grammarless}
-		content...
+	\begin{frame}{Grammar vs Grammarless/Freespeech}
+		Grammar based recognition
+		\begin{itemize}
+			\item[-] by restraining accepted inputs the results can be more precise
+			\item[-] mapping result to action can be very easy
+			\item[-] must be supported by approach \emph{and} implementation
+			\item[-] best suited for controlled environments/ use cases
+		\end{itemize}
+		Freespeech
+		\begin{itemize}
+			\item[-] usually seen in deep learning approaches
+			\item[-] any spoken word can be detected
+			\item[-] go-to apporach for extremely complex use cases
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Corrected Spelling vs Phoneme based recognition}
+		Corrected spelling
 		\begin{itemize}
-			\item 
+			\item[-] needs a dictionary
+			\item[-] guarantees correct spelling (important for further processing)
+			\item[-] makes a very robust speech recognition (esp. in combination with grammars)
+		\end{itemize}
+		Phoneme bases recognition
+		\begin{itemize}
+			\item[-] does not need any kind of dictionary
+			\item[-] adapts better to new/unique words
+			\item[-] usually embraced by deep learning approaches
 		\end{itemize}
 	\end{frame}
 	
