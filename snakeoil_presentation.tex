@@ -39,9 +39,13 @@
 		\tableofcontents[hideallsubsections]
 	\end{frame}
 	
-	\section{Motivation}
 	
-
+	
+	
+	
+	
+	
+	\section{Motivation}
 	
 	\begin{frame}{Foray Robocup Speechrec Task}
 		\centering
@@ -68,23 +72,24 @@
 		\begin{alertblock}{What are requirements for a robot regarding speech recognition? What is nice to have? What would be the optimum?}
 			\pause
 			\begin{itemize}
-				\item[-] first point
-				\item[-] second point
-				\item[-] third point
+				\item[-] Robustness (especially regarding noise)
+				\item[-] Beamforming / Signal enhancing
+				\item[-] Modularity
 			\end{itemize}
 		\end{alertblock}
 		
 	\end{frame}
 	
 	
-	\begin{frame}{Requirements}
-		content...
-	\end{frame}
-	
-	
 	\begin{frame}{Additional Thoughts}
-		content...\\
-		was ist eigentlich möglich, welche infos kann man zusätzlich generieren?
+		\begin{alertblock}{With these requirements set, what can we get for free?}
+			\pause
+			\begin{itemize}
+				\item[-] Gender Recognition
+				\item[-] Emotion Recognition
+				\item[-] Voice Recognition
+			\end{itemize}
+		\end{alertblock}
 	\end{frame}
 
 	\begin{frame}{Evaluation of existing solutions}
@@ -145,17 +150,37 @@
 	\section{Evaluation}
 	
 	\begin{frame}{Robocup Speechrec Task}
-		content...
-		% TODO: diagram
+		\pause
+		Pros:
+		\begin{itemize}
+			\item[-] is widely used to test robots speech recognition capabilities
+			\item[-] score can be used to compare against dozens of other robots
+		\end{itemize}
+		\pause
+		Cons:
+		\begin{itemize}
+			\item[-] setup (noise) is a bit tricky, but can be adequately simulated using several speakers in a big echoing hall
+			\item[-] is somewhat random, because some questions may be more difficult than others (however, difficulty may depend on components)
+			\item[-] encompasses a bit of visual person recognition as well as ''NLP'', but both are irrelevant for us
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Dataset Evaluation}
+		Everything is modular, so even the input can be switched out, so just read wav files instead of microphone input.\\
+
+		Compare WER and CPU time between...
+		\begin{itemize}
+			\item[-] bare minimum pipeline
+			\item[-] ''longer'' pipeline (more preprocessing)
+			\item[-] ''wider'' pipeline (more parallel components)
+			\item[-] all encompassing pipeline
+			\item[-] other pipelines (apartment)
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Fusion Test}
 		content...
 		% TODO: diagram
-	\end{frame}
-	
-	\begin{frame}{Dataset Evaluation}
-		content...
 	\end{frame}
 	
 	
