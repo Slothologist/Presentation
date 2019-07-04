@@ -28,9 +28,26 @@
 
 \title{A configurable speech recognition pipeline for social robots}
 \subtitle{Creating a fusion framework for analyzing speech data}
-\date{4.7.2019}
-\institute{Master Thesis}
+\date{11.7.2019}
+\institute{
+	Master Thesis\\
+	\begin{tabular}[t]{@{}l@{\hspace{3pt}}p{.32\textwidth}@{}}
+		Supervisiors: & Sven Wachsmuth \\
+		& Florian Lier \\
+		& Birte Carlmeyer
+	\end{tabular}%
+	\begin{tabular}[t]{@{}l@{\hspace{3pt}}p{.3\textwidth}@{}}
+		Reviewers: & Sven Wachsmuth \\
+		& Florian Lier
+	\end{tabular}%
+	}
 \author{Robert Feldhans}
+
+
+
+%TODO:
+% add metadata to title
+
 \begin{document}
 	\maketitle
 	
@@ -88,6 +105,7 @@
 				\item[-] Gender Recognition
 				\item[-] Emotion Recognition
 				\item[-] Voice Recognition
+				\item[-] Signal Enhancing
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
@@ -168,19 +186,39 @@
 	\begin{frame}{Dataset Evaluation}
 		Everything is modular, so even the input can be switched out, so just read wav files instead of microphone input.\\
 
-		Compare WER and CPU time between...
+		Compare WER and CPU/ overall time between...
 		\begin{itemize}
 			\item[-] bare minimum pipeline
 			\item[-] ''longer'' pipeline (more preprocessing)
 			\item[-] ''wider'' pipeline (more parallel components)
 			\item[-] all encompassing pipeline
-			\item[-] other pipelines (apartment)
+			\item[-] other pipelines (e.g. apartment)
 		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Fusion Test}
-		content...
-		% TODO: diagram
+		\centering
+		\includegraphics[width=.75\textwidth]{Bilder/fusion_test_0}
+	\end{frame}
+	
+	\begin{frame}{Fusion Test}
+		\centering
+		\includegraphics[width=.75\textwidth]{Bilder/fusion_test_1}
+	\end{frame}
+	
+	\begin{frame}{Fusion Test}
+		\centering
+		\includegraphics[width=.75\textwidth]{Bilder/fusion_test_2}
+	\end{frame}
+	
+	\begin{frame}{Fusion Test}
+		\begin{alertblock}{What to evaluate with this test?}
+			\pause
+			\begin{itemize}
+				\item[-] qualitative analysis
+				\item[-] can direction of arrival be properly mapped to a spoken sentence
+			\end{itemize}
+		\end{alertblock}
 	\end{frame}
 	
 	
@@ -189,7 +227,10 @@
 	
 	\section{Demo}
 	
-	
+	\begin{frame}{Demo Backup: Video}
+		%\centering
+		%\movie[width=\textwidth,poster,autostart,showcontrols,loop]{\includegraphics[width=\textwidth]{Bilder/robocup.png}}{Bilder/robocup.mp4}
+	\end{frame}
 	
 	
 	
