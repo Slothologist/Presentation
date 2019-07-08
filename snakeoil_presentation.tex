@@ -92,6 +92,7 @@
 				\item[-] Robustness (especially regarding noise)
 				\item[-] Beamforming / Signal enhancing
 				\item[-] Modularity
+				\item[-] Synchronization
 			\end{itemize}
 		\end{alertblock}
 		
@@ -107,21 +108,53 @@
 				\item[-] Voice Recognition
 				\item[-] Signal Enhancing
 			\end{itemize}
+			\pause
+			Synchronization can be used to fuse all this information!
 		\end{alertblock}
-	\end{frame}
-
-	\begin{frame}{Evaluation of existing solutions}
-		ALSA/ Pulseaudio
-		Jack Audio/ Gstreamer
-		GStreamer
 	\end{frame}
 	
 	\begin{frame}{Foray: Latency vs Signal Integrity}
-		content...
+		\begin{alertblock}{Latency}
+			\begin{itemize}
+				\item[-] Important for humans, stuttering makes recognition hard!
+				\item[-] Not that important for machines, as they can wait till they get the full signal
+			\end{itemize}
+		\end{alertblock}
+		\pause
+		\begin{alertblock}{Signal Integrity}
+			\begin{itemize}
+				\item[-] Definitely recognizable by humans, but we can deal with it
+				\item[-] Important for machines, otherwise artifacts may occur!
+			\end{itemize}
+		\end{alertblock}
 	\end{frame}
 	
-	\begin{frame}{Evaluation of existing solutions II}
+	\begin{frame}{Artifacts}
 		content...
+		%todo: diagram
+	\end{frame}
+	
+	\begin{frame}{Artifacts II}
+		content...
+		%todo: audio files
+	\end{frame}
+	
+	
+	\begin{frame}{Evaluation of existing solutions}
+		\begin{alertblock}{ALSA/ Pulseaudio}
+			\begin{itemize}
+				\item[-] Available everywhere
+				\item[-] Lack options for easy audio in- \& output
+				\item[-] Timestamping/ adding custom meta information is basically impossible
+			\end{itemize}
+		\end{alertblock}
+		\pause
+		\begin{alertblock}{Jack Audio/ Gstreamer}
+			\begin{itemize}
+				\item[-] strong focus on real time audio
+				\item[-] Timestamping/ adding custom meta information is basically impossible
+			\end{itemize}
+		\end{alertblock}
 	\end{frame}
 	
 	
@@ -133,7 +166,12 @@
 	\section{Pipeline}
 	
 	\begin{frame}{Idea}
-		content...
+		
+	\end{frame}
+	
+	\begin{frame}{Augmented audio}
+		\centering
+		\includegraphics[width=\textwidth]{Bilder/augmented_audio}
 	\end{frame}
 	
 	\begin{frame}{Architecture (Sound)}
@@ -151,9 +189,9 @@
 		\includegraphics[height=8cm]{Bilder/audio_flow_2}
 	\end{frame}
 	
-	\begin{frame}{Interfaces}
-		content...
-		% TODO: diagram
+	\begin{frame}{Architecture (Information)}
+		\centering
+		\includegraphics[width=\textwidth]{Bilder/orchestrator}
 	\end{frame}
 	
 	
