@@ -81,7 +81,6 @@
 	\end{frame}
 	
 	\begin{frame}{Robocup}
-		
 		\begin{alertblock}{What are requirements for a robot regarding speech recognition? What is nice to have? What would be the optimum?}
 			\pause
 			\begin{itemize}
@@ -91,7 +90,6 @@
 				\item[-] Synchronization
 			\end{itemize}
 		\end{alertblock}
-		
 	\end{frame}
 	
 	
@@ -175,7 +173,19 @@
 	\section{Pipeline}
 	
 	\begin{frame}{Idea}
-		
+		\begin{alertblock}{Library}
+			\begin{itemize}
+				\item[-] Focus on transmitting audio
+				\item[-] No audio shall be lost!
+			\end{itemize}
+		\end{alertblock}
+		\pause
+		\begin{alertblock}{Orchestrator}
+			\begin{itemize}
+				\item[-] Focus on synchronizing audio
+				\item[-] Handle configuration of nodes (under the hood)
+			\end{itemize}
+		\end{alertblock}	
 	\end{frame}
 	
 	\begin{frame}{Augmented audio}
@@ -202,20 +212,6 @@
 		\centering
 		\includegraphics[width=\textwidth]{Bilder/orchestrator}
 	\end{frame}
-	
-	
-	
-	
-	
-	
-	
-	
-	\section{Current State}
-	\begin{frame}{Progress}
-		\centering
-		\includegraphics[height=8cm]{Bilder/progress}
-	\end{frame}
-	
 	
 	
 	
@@ -274,8 +270,9 @@
 		\begin{alertblock}{What to evaluate with this test?}
 			\pause
 			\begin{itemize}
+				\item[-] Is the robot capable to robustly determine who is talking to it?
+				\item[-] Robustness tested with either manual jerking of the robot or with the help of Peppers autonomous life
 				\item[-] Qualitative analysis 
-				\item[-] 
 			\end{itemize}
 		\end{alertblock}
 	\end{frame}
@@ -284,12 +281,18 @@
 	
 	
 	
-	\section{Demo}
 	
-	\begin{frame}{Demo Backup: Video}
-		%\centering
-		%\movie[width=\textwidth,poster,autostart,showcontrols,loop]{\includegraphics[width=\textwidth]{Bilder/robocup.png}}{Bilder/robocup.mp4}
+	
+	\section{Current State}
+	
+	\begin{frame}{Progress}
+		\centering
+		\includegraphics[height=8cm]{Bilder/progress}
 	\end{frame}
+	
+	
+	
+	
 	
 	
 	
