@@ -34,7 +34,7 @@
 	\begin{tabular}[t]{@{}l@{\hspace{3pt}}p{.32\textwidth}@{}}
 		Supervisiors: & Sven Wachsmuth \\
 		& Florian Lier \\
-		& Birte Carlmeyer
+		& Birte Richter
 	\end{tabular}%
 	\begin{tabular}[t]{@{}l@{\hspace{3pt}}p{.3\textwidth}@{}}
 		Reviewers: & Sven Wachsmuth \\
@@ -182,8 +182,8 @@
 		\pause
 		\begin{alertblock}{Orchestrator}
 			\begin{itemize}
-				\item[-] Focus on synchronizing audio
-				\item[-] Handle configuration of nodes (under the hood)
+				\item[-] Focus on fusion of meta-data/ synchronizing audio
+				\item[-] Handle configuration of components (under the hood)
 			\end{itemize}
 		\end{alertblock}	
 	\end{frame}
@@ -215,6 +215,11 @@
 	\begin{frame}{Architecture (Sound Flow)}
 		\centering
 		\includegraphics[height=8cm]{Bilder/audio_flow_2}
+	\end{frame}
+	
+	\begin{frame}{Architecture (Sound Flow)}
+		\centering
+		\includegraphics[height=8cm]{Bilder/audio_flow_3}
 	\end{frame}
 	
 	\begin{frame}{Architecture (Information Flow)}
@@ -252,6 +257,7 @@
 		\begin{itemize}
 			\item[-] is widely used to test robots speech recognition capabilities
 			\item[-] score can be used to compare against dozens of other robots
+			\item[-] fusion could result in higher score
 		\end{itemize}
 		\pause
 		Cons:
@@ -271,7 +277,7 @@
 			\item[-] ''longer'' pipeline (more preprocessing)
 			\item[-] ''wider'' pipeline (more parallel components)
 			\item[-] all encompassing pipeline
-			\item[-] other pipelines (e.g. apartment)
+			\item[-] other pipelines (e.g. apartment, RoboCup system)
 		\end{itemize}
 	\end{frame}
 	
